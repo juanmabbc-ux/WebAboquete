@@ -1,0 +1,197 @@
+@import "tailwindcss";
+
+/* ===== Aboquete Design System =====
+ * Brand: Aboquete S.A. — Siempre Verde
+ * Built from official logo color extraction
+ * ============================================ */
+
+@theme {
+  /* ----- Brand Colors ----- */
+  --color-bosque-50:  #ecf6ef;
+  --color-bosque-100: #d2ebd9;
+  --color-bosque-200: #a9d6b6;
+  --color-bosque-300: #74b88a;
+  --color-bosque-400: #449c63;
+  --color-bosque-500: #2e8b3d;
+  --color-bosque-600: #1f7a32;
+  --color-bosque-700: #0f6b3f;  /* Primary — verde bosque */
+  --color-bosque-800: #0b5532;
+  --color-bosque-900: #073d24;
+
+  --color-lima-50:  #f3f9eb;
+  --color-lima-100: #e2f0d0;
+  --color-lima-200: #c5e0a5;
+  --color-lima-300: #9fcc70;
+  --color-lima-400: #6fb54a;  /* Verde lima */
+  --color-lima-500: #569b35;
+  --color-lima-600: #427a28;
+
+  --color-sol-50:  #fef9e2;
+  --color-sol-100: #fdf0b8;
+  --color-sol-200: #fbe687;
+  --color-sol-300: #f8d44a;
+  --color-sol-400: #f5c518;  /* Amarillo sol */
+  --color-sol-500: #d9a90a;
+  --color-sol-600: #a37e08;
+
+  --color-naranja-50:  #fdf1e7;
+  --color-naranja-100: #fadbc2;
+  --color-naranja-200: #f5b985;
+  --color-naranja-300: #ee9244;
+  --color-naranja-400: #e8771a;  /* Naranja "Siempre Verde" — CTA */
+  --color-naranja-500: #c95f0d;
+  --color-naranja-600: #a04b08;
+
+  --color-crema:   #faf7f0;
+  --color-crema-2: #f4ede0;
+  --color-tinta:   #1a1a1a;
+  --color-tinta-2: #3f3f3f;
+  --color-borde:   #e8e1d2;
+
+  /* ----- Semantic tokens ----- */
+  --color-primary:        var(--color-bosque-700);
+  --color-primary-hover:  var(--color-bosque-800);
+  --color-accent:         var(--color-naranja-400);
+  --color-accent-hover:   var(--color-naranja-500);
+  --color-surface:        #ffffff;
+  --color-surface-muted:  var(--color-crema);
+  --color-text:           var(--color-tinta);
+  --color-text-muted:     var(--color-tinta-2);
+  --color-border:         var(--color-borde);
+
+  /* ----- Typography ----- */
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-sans:    "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  /* ----- Radii & shadows ----- */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --shadow-soft: 0 1px 2px rgba(15, 107, 63, 0.04), 0 4px 16px rgba(15, 107, 63, 0.06);
+  --shadow-lift: 0 4px 8px rgba(15, 107, 63, 0.06), 0 16px 32px rgba(15, 107, 63, 0.08);
+}
+
+/* ----- Base layer ----- */
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-text);
+    background: var(--color-surface);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    color: var(--color-bosque-700);
+    letter-spacing: -0.015em;
+    font-weight: 600;
+    text-wrap: balance;
+  }
+
+  p { text-wrap: pretty; }
+
+  /* Accessible focus ring */
+  :where(a, button, [role="button"], input, select, textarea):focus-visible {
+    outline: 2px solid var(--color-bosque-700);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Selection */
+  ::selection {
+    background: var(--color-sol-200);
+    color: var(--color-tinta);
+  }
+}
+
+/* ----- Utility components ----- */
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition-all duration-200;
+    min-height: 44px;
+  }
+
+  .btn-primary {
+    background: var(--color-accent);
+    color: #fff;
+    box-shadow: 0 2px 6px rgba(232, 119, 26, 0.25);
+  }
+  .btn-primary:hover {
+    background: var(--color-accent-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(232, 119, 26, 0.32);
+  }
+
+  .btn-secondary {
+    background: var(--color-bosque-700);
+    color: #fff;
+  }
+  .btn-secondary:hover {
+    background: var(--color-bosque-800);
+    transform: translateY(-1px);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--color-bosque-700);
+    border: 1.5px solid var(--color-bosque-700);
+  }
+  .btn-outline:hover {
+    background: var(--color-bosque-700);
+    color: #fff;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em];
+    color: var(--color-bosque-700);
+  }
+
+  .card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    transition: transform 200ms ease, box-shadow 200ms ease;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lift);
+  }
+
+  .pill {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium;
+    background: var(--color-bosque-50);
+    color: var(--color-bosque-700);
+  }
+}
+
+/* Ribbon background (subtle "campo" texture using gradient) */
+.bg-campo {
+  background:
+    radial-gradient(1200px 400px at 50% -100px, var(--color-lima-100) 0%, transparent 60%),
+    linear-gradient(180deg, var(--color-crema) 0%, #ffffff 100%);
+}

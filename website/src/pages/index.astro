@@ -1,0 +1,333 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import Icon from '../components/Icon.astro';
+import ProductCard from '../components/ProductCard.astro';
+import { site, whatsappUrl } from '../data/site';
+import { packaged, featuredSlugs } from '../data/products';
+import logoSymbol from '../assets/brand/logo.jpg';
+
+const featured = packaged.filter((p) => featuredSlugs.includes(p.slug));
+
+const title = `${site.legalName} — Abono Orgánico y Tierra Negra en Panamá | ${site.tagline}`;
+const description =
+  'Abono orgánico, tierra negra, humus de lombriz, cascarilla de arroz y aluvión de río 100% panameños. Caballaza compostada con respaldo SENACYT-CECOM y Registro MIDA #2253. Cotiza por WhatsApp.';
+---
+
+<BaseLayout title={title} description={description}>
+
+  <!-- ============ HERO ============ -->
+  <section class="relative bg-campo pt-12 sm:pt-20 pb-20 sm:pb-28 overflow-hidden">
+    <div class="container-x grid lg:grid-cols-[1.1fr,0.9fr] gap-12 items-center relative z-10">
+      <div>
+        <span class="eyebrow">
+          <span class="w-2 h-2 rounded-full bg-[var(--color-naranja-400)]"></span>
+          Siempre Verde · Desde el año 2000
+        </span>
+        <h1 class="mt-5 text-4xl sm:text-5xl lg:text-6xl leading-[1.05]">
+          Suelo vivo,<br />
+          <span class="text-[var(--color-naranja-400)]">cosechas siempre verdes.</span>
+        </h1>
+        <p class="mt-6 text-lg leading-relaxed text-[var(--color-text-muted)] max-w-xl">
+          Abono orgánico, tierra negra y sustratos a base de <strong>caballaza 100% compostada</strong>.
+          Producción panameña con respaldo científico de SENACYT-CECOM y Registro MIDA #{site.midaRegistro}.
+          Desde una bolsa de 5 lbs hasta volquetes completos.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href={whatsappUrl()} target="_blank" rel="noopener" class="btn btn-primary text-base">
+            Cotizar por WhatsApp
+            <Icon name="arrow-right" size={18} />
+          </a>
+          <a href="/productos" class="btn btn-outline text-base">
+            Ver productos
+          </a>
+        </div>
+
+        <ul class="mt-10 flex flex-wrap gap-x-6 gap-y-3 text-sm text-[var(--color-text-muted)]">
+          <li class="inline-flex items-center gap-2">
+            <Icon name="check" size={16} class="text-[var(--color-lima-400)]" />
+            100% orgánico
+          </li>
+          <li class="inline-flex items-center gap-2">
+            <Icon name="check" size={16} class="text-[var(--color-lima-400)]" />
+            Registro MIDA #{site.midaRegistro}
+          </li>
+          <li class="inline-flex items-center gap-2">
+            <Icon name="check" size={16} class="text-[var(--color-lima-400)]" />
+            ITBMS exento
+          </li>
+          <li class="inline-flex items-center gap-2">
+            <Icon name="check" size={16} class="text-[var(--color-lima-400)]" />
+            Entregas en todo Panamá
+          </li>
+        </ul>
+      </div>
+
+      <div class="relative aspect-square max-w-md mx-auto w-full">
+        <div class="absolute inset-0 rounded-full bg-gradient-to-br from-[var(--color-sol-100)] via-[var(--color-lima-100)] to-[var(--color-bosque-50)] blur-3xl opacity-70"></div>
+        <Image
+          src={logoSymbol}
+          alt="Aboquete — emblema sol sobre campos verdes"
+          widths={[400, 600]}
+          sizes="(min-width: 1024px) 400px, 320px"
+          loading="eager"
+          class="relative w-full h-full object-contain drop-shadow-2xl"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROPUESTA DE VALOR (4 pilares) ============ -->
+  <section class="py-20 sm:py-24">
+    <div class="container-x">
+      <div class="max-w-2xl">
+        <span class="eyebrow">Por qué Aboquete</span>
+        <h2 class="mt-3 text-3xl sm:text-4xl">Cuatro razones para confiar en cada saco.</h2>
+      </div>
+
+      <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="card p-6">
+          <span class="inline-flex w-12 h-12 rounded-xl items-center justify-center bg-[var(--color-lima-100)] text-[var(--color-bosque-700)]">
+            <Icon name="leaf" size={26} />
+          </span>
+          <h3 class="mt-5 text-lg">100% Orgánico</h3>
+          <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-muted)]">
+            Sin químicos sintéticos ni hormonas. Caballaza compostada y materias primas naturales — eso es todo.
+          </p>
+        </div>
+
+        <div class="card p-6">
+          <span class="inline-flex w-12 h-12 rounded-xl items-center justify-center bg-[var(--color-sol-100)] text-[var(--color-bosque-700)]">
+            <Icon name="map-pin" size={26} />
+          </span>
+          <h3 class="mt-5 text-lg">Producción Panameña</h3>
+          <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-muted)]">
+            Origen en Chiriquí, operaciones en Ciudad de Panamá. Materias primas de productores locales.
+          </p>
+        </div>
+
+        <div class="card p-6">
+          <span class="inline-flex w-12 h-12 rounded-xl items-center justify-center bg-[var(--color-naranja-100)] text-[var(--color-bosque-700)]">
+            <Icon name="shield-check" size={26} />
+          </span>
+          <h3 class="mt-5 text-lg">Respaldo Científico</h3>
+          <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-muted)]">
+            Producto avalado por SENACYT-CECOM (Proyecto {site.senacytProject}) y Registro MIDA #{site.midaRegistro}.
+          </p>
+        </div>
+
+        <div class="card p-6">
+          <span class="inline-flex w-12 h-12 rounded-xl items-center justify-center bg-[var(--color-bosque-50)] text-[var(--color-bosque-700)]">
+            <Icon name="recycle" size={26} />
+          </span>
+          <h3 class="mt-5 text-lg">Agricultura Regenerativa</h3>
+          <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-muted)]">
+            Mejora la salud del suelo, aumenta biodiversidad y contribuye al secuestro de carbono.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MATERIA PRIMA ESTRELLA — CABALLAZA ============ -->
+  <section class="py-20 sm:py-24 bg-[var(--color-bosque-900)] text-white">
+    <div class="container-x grid lg:grid-cols-2 gap-14 items-center">
+      <div>
+        <span class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-sol-300)]">
+          <span class="w-2 h-2 rounded-full bg-[var(--color-sol-400)]"></span>
+          Materia prima estrella
+        </span>
+        <h2 class="mt-3 text-3xl sm:text-4xl text-white">
+          La caballaza compostada.<br />
+          <span class="text-[var(--color-sol-300)]">El corazón de cada producto.</span>
+        </h2>
+        <p class="mt-5 text-white/85 leading-relaxed">
+          Estiércol de caballo procesado por compostaje hasta convertirse en un fertilizante orgánico
+          estable, rico y vivo. Esta es la base de nuestro abono, nuestra tierra negra preparada y
+          nuestra enmienda agrícola — y la razón por la que el suelo donde la usas vuelve a producir.
+        </p>
+
+        <ul class="mt-8 grid gap-3">
+          <li class="flex gap-3"><span class="text-[var(--color-sol-300)] mt-1"><Icon name="check" size={18}/></span><span>Mejora la <strong>estructura del suelo</strong>: aireación y retención de humedad.</span></li>
+          <li class="flex gap-3"><span class="text-[var(--color-sol-300)] mt-1"><Icon name="check" size={18}/></span><span>Aporta <strong>materia orgánica</strong> e incrementa la actividad biológica.</span></li>
+          <li class="flex gap-3"><span class="text-[var(--color-sol-300)] mt-1"><Icon name="check" size={18}/></span><span>Favorece el <strong>desarrollo radicular</strong> desde el primer día.</span></li>
+          <li class="flex gap-3"><span class="text-[var(--color-sol-300)] mt-1"><Icon name="check" size={18}/></span><span>Enriquece con <strong>nitrógeno, fósforo y potasio</strong> en forma orgánica.</span></li>
+        </ul>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        {[
+          { label: 'Materia Orgánica', value: '40.75%' },
+          { label: 'Nitrógeno (N)', value: '2.37%' },
+          { label: 'Fósforo (P₂O₅)', value: '3.12%' },
+          { label: 'Calcio (Ca)', value: '2.87%' },
+        ].map((s) => (
+          <div class="rounded-2xl bg-white/5 border border-white/10 p-6">
+            <p class="text-xs uppercase tracking-wider text-white/60">{s.label}</p>
+            <p class="mt-2 text-3xl font-display font-semibold text-[var(--color-sol-300)]">{s.value}</p>
+          </div>
+        ))}
+        <p class="col-span-2 text-xs text-white/60 leading-relaxed">
+          Composición típica del Abono Orgánico Aboquete. Datos verificados — respaldo
+          SENACYT-CECOM y Registro MIDA #{site.midaRegistro}.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AUDIENCIAS ============ -->
+  <section class="py-20 sm:py-24">
+    <div class="container-x">
+      <div class="max-w-2xl">
+        <span class="eyebrow">¿Quién compra Aboquete?</span>
+        <h2 class="mt-3 text-3xl sm:text-4xl">Desde una maceta hasta una finca completa.</h2>
+        <p class="mt-4 text-[var(--color-text-muted)] leading-relaxed">
+          Trabajamos por igual con productores agrícolas que mueven volquetes, viveros que necesitan
+          consistencia y familias que quieren un huerto en casa.
+        </p>
+      </div>
+
+      <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+        {[
+          { icon: 'tractor', title: 'Productores agrícolas', text: 'Fincas, cultivos comerciales y reforestación a gran escala.' },
+          { icon: 'sprout', title: 'Viveros', text: 'Sustratos consistentes para producción de plantas en serie.' },
+          { icon: 'building', title: 'Constructoras', text: 'Tierra para áreas verdes, jardines y proyectos de paisajismo.' },
+          { icon: 'shopping-bag', title: 'Cadenas comerciales', text: 'Producto empacado y marca privada para retail.' },
+          { icon: 'home', title: 'Hogares', text: 'Bolsas listas para macetas, huertos y jardines caseros.' },
+        ].map((a) => (
+          <div class="card p-6 text-center">
+            <span class="inline-flex w-14 h-14 rounded-2xl items-center justify-center bg-[var(--color-bosque-50)] text-[var(--color-bosque-700)] mx-auto">
+              <Icon name={a.icon as any} size={26} />
+            </span>
+            <h3 class="mt-4 text-base">{a.title}</h3>
+            <p class="mt-2 text-sm text-[var(--color-text-muted)]">{a.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CREDENCIALES (Trust Strip) ============ -->
+  <section class="py-12 sm:py-16 bg-[var(--color-crema)] border-y border-[var(--color-border)]">
+    <div class="container-x">
+      <p class="text-center text-xs font-semibold uppercase tracking-[0.18em] text-[var(--color-bosque-700)]">
+        Avalado, registrado y verificado
+      </p>
+      <div class="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-6">
+        <div class="text-center">
+          <p class="text-4xl sm:text-5xl font-display font-semibold text-[var(--color-bosque-700)]">25+</p>
+          <p class="mt-1 text-sm text-[var(--color-text-muted)]">años en agroindustria</p>
+        </div>
+        <div class="text-center">
+          <p class="text-base sm:text-lg font-semibold text-[var(--color-bosque-700)]">MIDA</p>
+          <p class="mt-1 text-sm text-[var(--color-text-muted)]">Registro #{site.midaRegistro}</p>
+        </div>
+        <div class="text-center">
+          <p class="text-base sm:text-lg font-semibold text-[var(--color-bosque-700)]">SENACYT-CECOM</p>
+          <p class="mt-1 text-sm text-[var(--color-text-muted)]">Proyecto {site.senacytProject}</p>
+        </div>
+        <div class="text-center">
+          <p class="text-base sm:text-lg font-semibold text-[var(--color-bosque-700)]">ITBMS exento</p>
+          <p class="mt-1 text-sm text-[var(--color-text-muted)]">Cert. {site.itbmsCert}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRODUCTOS DESTACADOS ============ -->
+  <section class="py-20 sm:py-24">
+    <div class="container-x">
+      <div class="flex flex-wrap items-end justify-between gap-6 mb-12">
+        <div class="max-w-xl">
+          <span class="eyebrow">Catálogo destacado</span>
+          <h2 class="mt-3 text-3xl sm:text-4xl">Empacado, listo para sembrar.</h2>
+          <p class="mt-4 text-[var(--color-text-muted)] leading-relaxed">
+            Para jardín, hogar y agricultura. Cada producto sale con composición certificada
+            y queda listo para usar.
+          </p>
+        </div>
+        <a href="/productos" class="btn btn-outline">
+          Ver todos los productos
+          <Icon name="arrow-right" size={18} />
+        </a>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {featured.map((p) => <ProductCard product={p} compact />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ A GRANEL (CTA) ============ -->
+  <section class="py-20 sm:py-24 bg-[var(--color-bosque-700)] text-white relative overflow-hidden">
+    <div class="container-x grid lg:grid-cols-[1.2fr,1fr] gap-10 items-center relative z-10">
+      <div>
+        <span class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-sol-300)]">
+          <Icon name="truck" size={16}/>
+          Pedidos por volquete
+        </span>
+        <h2 class="mt-3 text-3xl sm:text-4xl text-white">¿Necesitas volumen?</h2>
+        <p class="mt-4 text-white/90 leading-relaxed max-w-xl">
+          Enmienda agrícola a granel, tierra negra preparada y tierra especializada para césped.
+          Cotizamos por volumen y zona de entrega — incluyendo proyectos de exportación FOB Panamá.
+        </p>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a href={whatsappUrl('Hola Aboquete, necesito una cotización por volquete. ¿Pueden ayudarme?')} target="_blank" rel="noopener" class="btn btn-primary">
+            Cotizar por volquete
+            <Icon name="arrow-right" size={18} />
+          </a>
+          <a href="/productos#granel" class="btn btn-outline text-white border-white/40 hover:bg-white hover:text-[var(--color-bosque-700)]">
+            Ver productos a granel
+          </a>
+        </div>
+      </div>
+      <div class="grid gap-3">
+        <div class="rounded-xl bg-white/5 border border-white/10 p-5">
+          <p class="text-sm text-white/60">Pallet de exportación</p>
+          <p class="mt-1 text-xl font-display font-semibold text-white">25 sacos · ~1.13 t</p>
+          <p class="mt-2 text-sm text-white/70">Saco de 100 lbs · Entrega FOB Panamá</p>
+        </div>
+        <div class="rounded-xl bg-white/5 border border-white/10 p-5">
+          <p class="text-sm text-white/60">A granel — por volquete</p>
+          <p class="mt-1 text-xl font-display font-semibold text-white">Fincas, viveros, paisajismo</p>
+          <p class="mt-2 text-sm text-white/70">Tierra negra preparada · Enmienda agrícola · Tierra para césped</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL / CONTACTO ============ -->
+  <section class="py-20 sm:py-24">
+    <div class="container-x">
+      <div class="card p-8 sm:p-12 text-center bg-gradient-to-br from-[var(--color-crema)] to-white">
+        <h2 class="text-3xl sm:text-4xl">Hablemos del proyecto.</h2>
+        <p class="mt-4 text-[var(--color-text-muted)] max-w-xl mx-auto leading-relaxed">
+          Cuéntanos qué necesitas — desde una bolsa de 5 lbs para tu huerto hasta un pallet de exportación.
+          Te respondemos por WhatsApp en horario laboral.
+        </p>
+        <div class="mt-7 flex flex-wrap justify-center gap-3">
+          <a href={whatsappUrl()} target="_blank" rel="noopener" class="btn btn-primary">
+            <Icon name="phone" size={18} />
+            WhatsApp {site.phoneDisplay}
+          </a>
+          <a href={`mailto:${site.email}`} class="btn btn-outline">
+            <Icon name="mail" size={18} />
+            {site.email}
+          </a>
+        </div>
+        <div class="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-[var(--color-text-muted)]">
+          <span class="inline-flex items-center gap-2">
+            <Icon name="map-pin" size={16} class="text-[var(--color-bosque-700)]" />
+            {site.address.street}, {site.address.city}
+          </span>
+          <a href={site.social.instagram} target="_blank" rel="noopener" class="inline-flex items-center gap-2 hover:text-[var(--color-bosque-700)]">
+            <Icon name="instagram" size={16} class="text-[var(--color-bosque-700)]" />
+            Instagram {site.social.instagramHandle}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

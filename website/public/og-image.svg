@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FAF7F0"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="0%" r="60%">
+      <stop offset="0%" stop-color="#E2F0D0" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#FAF7F0" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- Left content -->
+  <g font-family="Georgia, serif" fill="#0F6B3F">
+    <text x="80" y="120" font-size="20" font-weight="700" letter-spacing="6" fill="#0F6B3F" font-family="Helvetica, sans-serif">ABOQUETE · SIEMPRE VERDE</text>
+    <text x="80" y="250" font-size="78" font-weight="700">Suelo vivo,</text>
+    <text x="80" y="340" font-size="78" font-weight="700" fill="#E8771A">cosechas siempre verdes.</text>
+    <text x="80" y="420" font-size="28" fill="#3f3f3f" font-family="Helvetica, sans-serif">Abono orgánico · Tierra negra · Humus de lombriz</text>
+    <text x="80" y="460" font-size="28" fill="#3f3f3f" font-family="Helvetica, sans-serif">Cascarilla de arroz · Aluvión de río · Enmienda agrícola</text>
+  </g>
+
+  <!-- Trust strip -->
+  <g font-family="Helvetica, sans-serif" font-weight="700" fill="#0F6B3F" font-size="18">
+    <rect x="80" y="510" width="220" height="50" rx="25" fill="#0F6B3F"/>
+    <text x="190" y="542" text-anchor="middle" fill="#fff">MIDA #2253</text>
+    <rect x="312" y="510" width="220" height="50" rx="25" fill="#2E8B3D"/>
+    <text x="422" y="542" text-anchor="middle" fill="#fff">SENACYT-CECOM</text>
+    <rect x="544" y="510" width="200" height="50" rx="25" fill="#E8771A"/>
+    <text x="644" y="542" text-anchor="middle" fill="#fff">ITBMS exento</text>
+  </g>
+
+  <!-- Right: sun + fields emblem -->
+  <g transform="translate(880, 315)">
+    <circle r="220" fill="#F4EDE0"/>
+    <!-- sun -->
+    <g fill="#F5C518">
+      <circle cx="0" cy="-30" r="50"/>
+      <g>
+        <rect x="-7" y="-130" width="14" height="40" rx="3"/>
+        <rect x="-7" y="-130" width="14" height="40" rx="3" transform="rotate(30)"/>
+        <rect x="-7" y="-130" width="14" height="40" rx="3" transform="rotate(60)"/>
+        <rect x="-7" y="-130" width="14" height="40" rx="3" transform="rotate(-30)"/>
+        <rect x="-7" y="-130" width="14" height="40" rx="3" transform="rotate(-60)"/>
+        <rect x="-7" y="-130" width="14" height="40" rx="3" transform="rotate(15)"/>
+        <rect x="-7" y="-130" width="14" height="40" rx="3" transform="rotate(-15)"/>
+        <rect x="-7" y="-130" width="14" height="40" rx="3" transform="rotate(45)"/>
+        <rect x="-7" y="-130" width="14" height="40" rx="3" transform="rotate(-45)"/>
+      </g>
+    </g>
+    <!-- fields -->
+    <path d="M-180 50 Q0 0 180 50 L180 90 Q0 40 -180 90 Z" fill="#0F6B3F"/>
+    <path d="M-160 90 Q0 50 160 90 L160 130 Q0 80 -160 130 Z" fill="#2E8B3D"/>
+    <path d="M-140 130 Q0 95 140 130 L140 170 Q0 130 -140 170 Z" fill="#6FB54A"/>
+  </g>
+</svg>

@@ -1,0 +1,37 @@
+# Aboquete S.A.
+
+> Aboquete S.A. — "Siempre Verde". Empresa panameña fundada en el año 2000 que produce y comercializa enmiendas orgánicas para suelo, sustratos y fertilizantes a base de caballaza compostada. Producción 100% local, con respaldo SENACYT-CECOM (Proyecto DINE-028-2023) y Registro MIDA #2253.
+
+Sede: Chanis, Hipódromo Presidente Remón, Ciudad de Panamá.
+WhatsApp / Teléfono: +507 6645-7828
+Email: info@aboquete.com
+Instagram: @aboquete
+ITBMS: Exento — Cert. N° 967000028026
+
+## Páginas principales
+
+- [Inicio](https://aboquetepty.com/): Propuesta de valor, materia prima estrella (caballaza compostada), credenciales y catálogo destacado.
+- [Productos](https://aboquetepty.com/productos): Catálogo completo de productos empacados y a granel, con composición química, usos y presentaciones.
+
+## Catálogo machine-readable
+
+- [Catálogo de productos](https://aboquetepty.com/productos.md): Lista estructurada en markdown con composición, usos y presentaciones — pensada para extracción por agentes de IA.
+
+## Productos empacados
+
+- **Abono Orgánico**: Caballaza 100% compostada. M.O. 40.75%, N 2.37%, P₂O₅ 3.12%, Ca 2.87%. Presentaciones: 5 lbs y 100 lbs.
+- **Tierra Negra**: Aluvión de río + caballaza compostada + cascarilla de arroz. Lista para trasplantes, macetas y huertos. Presentaciones: 15 lbs y 100 lbs.
+- **Humus de Lombriz**: Vermicompost de Lombriz Roja Californiana (Eisenia fetida). Presentación: 8 lbs.
+- **Cascarilla de Arroz**: Sustrato inerte solarizado, alto sílice y potasio. Presentaciones: 6 lts y 80 lts.
+- **Aluvión de Río**: Arena hortícola natural para suculentas y semilleros. Presentaciones: 8 lbs y 100 lbs.
+- **Enmienda Agrícola**: Mayoreo y exportación FOB Panamá. Saco 100 lbs o Pallet 25 sacos (~1.13 t).
+
+## Productos a granel (por volquete)
+
+- **Enmienda Agrícola Orgánica a Granel**: Caballaza compostada — fincas, viveros, paisajismo, reforestación.
+- **Tierra Negra Preparada a Granel**: Aluvión + caballaza + cascarilla — jardines, huertos, camas elevadas, paisajismo.
+- **Tierra Especializada para Césped**: Tierra negra + abono orgánico + arena aluvial — canchas, jardines, campos deportivos.
+
+## Clientes objetivo
+
+Productores agrícolas, viveros, constructoras, cadenas comerciales y hogares en Panamá. Capacidad de exportación FOB Panamá para mercados internacionales.
