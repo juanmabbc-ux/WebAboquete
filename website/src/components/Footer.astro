@@ -1,0 +1,76 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/brand/brand_logo.jpg';
+import { site, whatsappUrl } from '../data/site';
+const year = new Date().getFullYear();
+---
+
+<footer id="contacto" class="bg-[var(--color-bosque-900)] text-white mt-20">
+  <div class="container-x py-14 grid gap-10 md:grid-cols-4">
+    <div class="md:col-span-2">
+      <div class="bg-white rounded-xl p-3 inline-block">
+        <Image src={logo} alt={`${site.legalName} ${site.tagline}`} widths={[160, 240]} sizes="200px" loading="lazy" class="h-10 w-auto" />
+      </div>
+      <p class="mt-5 text-white/80 max-w-md leading-relaxed">
+        Enmiendas orgánicas, sustratos y fertilizantes a base de caballaza compostada.
+        Producción 100% panameña desde el año {site.founded}.
+      </p>
+      <div class="mt-5 flex flex-wrap gap-2">
+        <span class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 text-xs font-medium">
+          MIDA #{site.midaRegistro}
+        </span>
+        <span class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 text-xs font-medium">
+          SENACYT-CECOM
+        </span>
+        <span class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 text-xs font-medium">
+          ITBMS exento
+        </span>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="text-white font-semibold text-sm uppercase tracking-wider">Contacto</h3>
+      <ul class="mt-4 space-y-3 text-sm text-white/80">
+        <li>
+          <a href={whatsappUrl()} target="_blank" rel="noopener" class="hover:text-white transition-colors">
+            WhatsApp: {site.phoneDisplay}
+          </a>
+        </li>
+        <li>
+          <a href={`mailto:${site.email}`} class="hover:text-white transition-colors">
+            {site.email}
+          </a>
+        </li>
+        <li>
+          <a href={site.social.instagram} target="_blank" rel="noopener" class="hover:text-white transition-colors">
+            Instagram {site.social.instagramHandle}
+          </a>
+        </li>
+        <li class="leading-relaxed">
+          {site.address.street}<br />{site.address.city}, {site.address.country}
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-semibold text-sm uppercase tracking-wider">Empresa</h3>
+      <ul class="mt-4 space-y-3 text-sm text-white/80">
+        <li><a href="/" class="hover:text-white transition-colors">Inicio</a></li>
+        <li><a href="/productos" class="hover:text-white transition-colors">Productos</a></li>
+        <li class="pt-2 border-t border-white/10">
+          <span class="text-white/60">RUC:</span> {site.ruc}
+        </li>
+        <li>
+          <span class="text-white/60">Cert. ITBMS:</span> {site.itbmsCert}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10">
+    <div class="container-x py-5 flex flex-col sm:flex-row justify-between gap-3 text-xs text-white/60">
+      <p>© {year} {site.legalName}. Todos los derechos reservados.</p>
+      <p>Última actualización: {site.lastUpdated}</p>
+    </div>
+  </div>
+</footer>

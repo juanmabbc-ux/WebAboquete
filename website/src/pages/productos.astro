@@ -1,0 +1,227 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import FAQ from '../components/FAQ.astro';
+import Icon from '../components/Icon.astro';
+import { site, whatsappUrl } from '../data/site';
+import { packaged, bulk } from '../data/products';
+
+const title = `Productos Aboquete — Abono Orgánico, Tierra Negra, Humus de Lombriz | ${site.legalName}`;
+const description =
+  'Catálogo completo Aboquete: Abono Orgánico, Tierra Negra, Humus de Lombriz, Cascarilla de Arroz, Aluvión de Río y Enmienda Agrícola. Empacado y a granel. Cotiza por WhatsApp.';
+
+const faqs = [
+  {
+    q: '¿En qué presentaciones venden los productos?',
+    a:
+      'Manejamos bolsas para hogar y jardín desde 5 lbs hasta 100 lbs, pallets de 25 sacos (~1.13 toneladas) para mayoreo y exportación, y entregas a granel por volquete para fincas, viveros, paisajismo y reforestación.',
+  },
+  {
+    q: '¿Hacen entregas en todo Panamá?',
+    a:
+      'Sí. Nuestras operaciones están en Chanis (Hipódromo Presidente Remón, Ciudad de Panamá) y servimos a clientes en todo el país. Para entregas fuera del área metropolitana cotizamos según volumen y zona — solo escríbenos por WhatsApp con tu ubicación.',
+  },
+  {
+    q: '¿Puedo exportar producto desde Panamá?',
+    a:
+      'Sí. Nuestra Enmienda Agrícola se exporta bajo Aviso de Operación MICI vigente, en sacos de 100 lbs o pallets de 25 sacos (~1.13 t), con entrega FOB Panamá. Escríbenos los detalles del destino y el volumen requerido para cotizar.',
+  },
+  {
+    q: '¿Aboquete cobra ITBMS?',
+    a:
+      `No. Aboquete S.A. está exento de ITBMS bajo el certificado N° ${site.itbmsCert}, por tratarse de productos agropecuarios. El precio que cotizamos es el precio final.`,
+  },
+  {
+    q: '¿Cuál es la diferencia entre abono orgánico y fertilizante químico?',
+    a:
+      'Nuestro abono orgánico es caballaza 100% compostada — sin químicos sintéticos ni hormonas — que libera nitrógeno, fósforo y potasio en forma orgánica. Mejora la estructura y la vida microbiana del suelo en el tiempo, mientras que los fertilizantes químicos solo dan nutrientes de impacto rápido sin regenerar el suelo.',
+  },
+  {
+    q: '¿Cuánto pesa un saco de 100 lbs y cuánta área cubre?',
+    a:
+      'Un saco de 100 lbs equivale a 45.4 kg. La cobertura varía según el cultivo y el método de aplicación — para una recomendación específica de dosis para tu cultivo o área, escríbenos por WhatsApp con los detalles del proyecto.',
+  },
+];
+
+/* ----- JSON-LD: FAQPage + ItemList of Products (for AI extraction) ----- */
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+
+const productLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Catálogo de productos Aboquete',
+  itemListElement: packaged.map((p, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    item: {
+      '@type': 'Product',
+      name: `${p.name} Aboquete`,
+      description: p.definition,
+      brand: { '@type': 'Brand', name: site.name },
+      manufacturer: { '@type': 'Organization', name: site.legalName },
+      category: 'Enmiendas orgánicas y sustratos agrícolas',
+    },
+  })),
+};
+
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: site.url },
+    { '@type': 'ListItem', position: 2, name: 'Productos', item: `${site.url}/productos` },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  structuredData={[faqLd, productLd, breadcrumbLd]}
+>
+
+  <!-- ============ PAGE HEADER ============ -->
+  <section class="bg-campo py-14 sm:py-20">
+    <div class="container-x max-w-3xl">
+      <nav aria-label="Migas de pan" class="text-sm text-[var(--color-text-muted)]">
+        <a href="/" class="hover:text-[var(--color-bosque-700)]">Inicio</a>
+        <span class="mx-2">/</span>
+        <span class="text-[var(--color-bosque-700)] font-medium">Productos</span>
+      </nav>
+      <h1 class="mt-4 text-4xl sm:text-5xl">Catálogo Aboquete.</h1>
+      <p class="mt-4 text-lg leading-relaxed text-[var(--color-text-muted)]">
+        Abono orgánico, tierra negra, humus de lombriz, cascarilla de arroz, aluvión de río y enmienda
+        agrícola — empacado para hogar y jardín, o a granel para fincas y proyectos comerciales.
+      </p>
+
+      <div class="mt-8 flex gap-2 p-1 rounded-full bg-white border border-[var(--color-border)] w-fit shadow-sm">
+        <a href="#empacados" class="px-5 py-2 text-sm font-medium rounded-full bg-[var(--color-bosque-700)] text-white">
+          Empacados
+        </a>
+        <a href="#granel" class="px-5 py-2 text-sm font-medium rounded-full text-[var(--color-text)] hover:bg-[var(--color-bosque-50)] transition-colors">
+          A granel
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EMPACADOS ============ -->
+  <section id="empacados" class="py-16 sm:py-20 scroll-mt-20">
+    <div class="container-x">
+      <div class="flex items-end justify-between gap-6 mb-10 flex-wrap">
+        <div>
+          <span class="eyebrow">Sección 1</span>
+          <h2 class="mt-2 text-3xl sm:text-4xl">Productos empacados</h2>
+          <p class="mt-3 text-[var(--color-text-muted)] max-w-xl leading-relaxed">
+            Para jardín, hogar y agricultura. Cada producto incluye composición certificada,
+            usos recomendados y presentaciones disponibles.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {packaged.map((p) => <ProductCard product={p} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GRANEL ============ -->
+  <section id="granel" class="py-16 sm:py-20 bg-[var(--color-bosque-900)] text-white scroll-mt-20">
+    <div class="container-x">
+      <div class="max-w-2xl">
+        <span class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-sol-300)]">
+          <Icon name="truck" size={16} />
+          Sección 2
+        </span>
+        <h2 class="mt-2 text-3xl sm:text-4xl text-white">Productos a granel</h2>
+        <p class="mt-4 text-white/85 leading-relaxed">
+          Para fincas, viveros, paisajismo, reforestación y proyectos de construcción.
+          Se cotizan por volumen y zona de entrega.
+        </p>
+      </div>
+
+      <div class="mt-10 overflow-hidden rounded-2xl border border-white/10">
+        <table class="w-full text-left bg-white/5 hidden md:table">
+          <thead class="bg-white/10 text-xs uppercase tracking-wider text-white/70">
+            <tr>
+              <th scope="col" class="px-6 py-4">Producto</th>
+              <th scope="col" class="px-6 py-4">Fórmula</th>
+              <th scope="col" class="px-6 py-4">Uso principal</th>
+              <th scope="col" class="px-6 py-4 text-right">Acción</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/10">
+            {bulk.map((p) => (
+              <tr>
+                <th scope="row" class="px-6 py-5 font-semibold text-white align-top">
+                  {p.name}
+                </th>
+                <td class="px-6 py-5 text-white/80 text-sm align-top">{p.formula}</td>
+                <td class="px-6 py-5 text-white/80 text-sm align-top">{p.use}</td>
+                <td class="px-6 py-5 text-right align-top">
+                  <a
+                    href={whatsappUrl(`Hola Aboquete, necesito cotizar ${p.name} por volquete.`)}
+                    target="_blank" rel="noopener"
+                    class="btn btn-primary text-xs px-4 py-2"
+                  >
+                    Cotizar
+                  </a>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+
+        <!-- Mobile cards -->
+        <ul class="md:hidden divide-y divide-white/10">
+          {bulk.map((p) => (
+            <li class="p-5">
+              <h3 class="text-white font-semibold">{p.name}</h3>
+              <p class="mt-2 text-sm text-white/70"><strong class="text-white/85">Fórmula:</strong> {p.formula}</p>
+              <p class="mt-1 text-sm text-white/70"><strong class="text-white/85">Uso:</strong> {p.use}</p>
+              <a
+                href={whatsappUrl(`Hola Aboquete, necesito cotizar ${p.name} por volquete.`)}
+                target="_blank" rel="noopener"
+                class="btn btn-primary w-full mt-4 text-sm"
+              >
+                Cotizar por volquete
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <p class="mt-6 text-sm text-white/60">
+        Los productos a granel se cotizan según volumen y zona de entrega.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="py-20 sm:py-24">
+    <div class="container-x max-w-3xl">
+      <div class="text-center mb-10">
+        <span class="eyebrow">Preguntas frecuentes</span>
+        <h2 class="mt-3 text-3xl sm:text-4xl">Lo que más nos preguntan.</h2>
+      </div>
+      <FAQ items={faqs} />
+
+      <div class="mt-10 text-center">
+        <p class="text-[var(--color-text-muted)]">¿Tu pregunta no está acá?</p>
+        <a href={whatsappUrl()} target="_blank" rel="noopener" class="btn btn-primary mt-4">
+          <Icon name="phone" size={18} />
+          Escríbenos por WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
