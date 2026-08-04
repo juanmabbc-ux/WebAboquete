@@ -36,4 +36,4 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://aboquetepty.com/sitemap-index.xml
+Sitemap: https://aboquete.com/sitemap-index.xml

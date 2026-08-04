@@ -7,7 +7,7 @@ export const site = {
   name: 'Aboquete',
   legalName: 'Aboquete S.A.',
   tagline: 'Siempre Verde',
-  url: 'https://aboquetepty.com',
+  url: 'https://aboquete.com',
   locale: 'es-PA',
   founded: '2000',
 

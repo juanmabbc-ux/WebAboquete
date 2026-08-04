@@ -10,12 +10,12 @@ ITBMS: Exento — Cert. N° 967000028026
 
 ## Páginas principales
 
-- [Inicio](https://aboquetepty.com/): Propuesta de valor, materia prima estrella (caballaza compostada), credenciales y catálogo destacado.
-- [Productos](https://aboquetepty.com/productos): Catálogo completo de productos empacados y a granel, con composición química, usos y presentaciones.
+- [Inicio](https://aboquete.com/): Propuesta de valor, materia prima estrella (caballaza compostada), credenciales y catálogo destacado.
+- [Productos](https://aboquete.com/productos): Catálogo completo de productos empacados y a granel, con composición química, usos y presentaciones.
 
 ## Catálogo machine-readable
 
-- [Catálogo de productos](https://aboquetepty.com/productos.md): Lista estructurada en markdown con composición, usos y presentaciones — pensada para extracción por agentes de IA.
+- [Catálogo de productos](https://aboquete.com/productos.md): Lista estructurada en markdown con composición, usos y presentaciones — pensada para extracción por agentes de IA.
 
 ## Productos empacados
 

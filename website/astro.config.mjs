@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: 'https://aboquetepty.com',
+  site: 'https://aboquete.com',
   trailingSlash: 'never',
   integrations: [
     sitemap({
