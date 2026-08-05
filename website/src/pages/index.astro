@@ -5,6 +5,7 @@ import Icon from '../components/Icon.astro';
 import ProductCard from '../components/ProductCard.astro';
 import { site, whatsappUrl } from '../data/site';
 import { packaged, featuredSlugs } from '../data/products';
+import { plants } from '../data/vivero';
 import logoSymbol from '../assets/brand/logo.jpg';
 
 const featured = packaged.filter((p) => featuredSlugs.includes(p.slug));
@@ -255,6 +256,41 @@ const description =
 
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {featured.map((p) => <ProductCard product={p} compact />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VIVERO (TEASER) ============ -->
+  <section class="py-20 sm:py-24 bg-[var(--color-crema)] border-y border-[var(--color-border)]">
+    <div class="container-x grid lg:grid-cols-[1.1fr,1fr] gap-12 items-center">
+      <div>
+        <span class="eyebrow">Nuevo · Vivero Aboquete</span>
+        <h2 class="mt-3 text-3xl sm:text-4xl">Plantas para tu proyecto.</h2>
+        <p class="mt-4 text-[var(--color-text-muted)] leading-relaxed max-w-xl">
+          Ornamentales, palmas, árboles, setos y cobertoras — cultivadas en nuestros propios
+          sustratos orgánicos. Abastecemos paisajismo, constructoras y urbanizaciones con
+          entrega a nivel nacional.
+        </p>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a href="/vivero" class="btn btn-primary">
+            Conocer el vivero
+            <Icon name="arrow-right" size={18} />
+          </a>
+        </div>
+      </div>
+      <div class="grid grid-cols-3 gap-3">
+        {plants.slice(0, 6).map((p) => (
+          <a href={`/vivero#planta-${p.slug}`} class="block aspect-square overflow-hidden rounded-xl border border-[var(--color-border)] bg-white" aria-label={`Ver ${p.name} en el vivero`}>
+            <Image
+              src={p.image}
+              alt={`${p.name} — Vivero Aboquete`}
+              widths={[200, 300]}
+              sizes="(min-width: 1024px) 160px, 30vw"
+              loading="lazy"
+              class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+            />
+          </a>
+        ))}
       </div>
     </div>
   </section>

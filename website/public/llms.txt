@@ -12,6 +12,7 @@ ITBMS: Exento — Cert. N° 967000028026
 
 - [Inicio](https://aboquete.com/): Propuesta de valor, materia prima estrella (caballaza compostada), credenciales y catálogo destacado.
 - [Productos](https://aboquete.com/productos): Catálogo completo de productos empacados y a granel, con composición química, usos y presentaciones.
+- [Vivero](https://aboquete.com/vivero): Plantas ornamentales, palmas, árboles, setos y cobertoras para proyectos de paisajismo, constructoras y urbanizaciones. Entrega a nivel nacional. Cotización por WhatsApp.
 
 ## Catálogo machine-readable
 

@@ -1,0 +1,185 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PlantCard from '../components/PlantCard.astro';
+import Icon from '../components/Icon.astro';
+import { site, whatsappUrl } from '../data/site';
+import { plants, moreCategories } from '../data/vivero';
+
+const title = `Vivero Aboquete — Plantas Ornamentales, Palmas y Árboles para Proyectos | ${site.legalName}`;
+const description =
+  'Vivero Aboquete: plantas ornamentales, palmas, árboles, setos y cobertoras para paisajismo, constructoras y urbanizaciones. Entrega a nivel nacional en Panamá. Cotiza tu proyecto por WhatsApp.';
+
+const projectMsg =
+  'Hola Aboquete, tengo un proyecto y quisiera cotizar plantas del vivero. ¿Pueden ayudarme?';
+
+/* ----- JSON-LD: ItemList of plants + breadcrumb ----- */
+const plantLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Vivero Aboquete — catálogo de plantas',
+  itemListElement: plants.map((p, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    item: {
+      '@type': 'Product',
+      name: `${p.name} (${p.scientificName})`,
+      description: p.description,
+      brand: { '@type': 'Brand', name: site.name },
+      category: 'Plantas ornamentales de vivero',
+    },
+  })),
+};
+
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: site.url },
+    { '@type': 'ListItem', position: 2, name: 'Vivero', item: `${site.url}/vivero` },
+  ],
+};
+---
+
+<BaseLayout title={title} description={description} structuredData={[plantLd, breadcrumbLd]}>
+
+  <!-- ============ PAGE HEADER ============ -->
+  <section class="bg-campo py-14 sm:py-20">
+    <div class="container-x max-w-3xl">
+      <nav aria-label="Migas de pan" class="text-sm text-[var(--color-text-muted)]">
+        <a href="/" class="hover:text-[var(--color-bosque-700)]">Inicio</a>
+        <span class="mx-2">/</span>
+        <span class="text-[var(--color-bosque-700)] font-medium">Vivero</span>
+      </nav>
+      <h1 class="mt-4 text-4xl sm:text-5xl">Vivero Aboquete.</h1>
+      <p class="mt-4 text-lg leading-relaxed text-[var(--color-text-muted)]">
+        Plantas ornamentales, palmas, árboles, setos y cobertoras — cultivadas con nuestros propios
+        sustratos orgánicos. Abastecemos proyectos de paisajismo, constructoras y urbanizaciones
+        con entrega a nivel nacional.
+      </p>
+
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href={whatsappUrl(projectMsg)} target="_blank" rel="noopener" class="btn btn-primary">
+          Cotizar mi proyecto
+          <Icon name="arrow-right" size={18} />
+        </a>
+        <a href="#catalogo" class="btn btn-outline">Ver plantas</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CATÁLOGO ============ -->
+  <section id="catalogo" class="py-16 sm:py-20 scroll-mt-20">
+    <div class="container-x">
+      <div class="flex items-end justify-between gap-6 mb-10 flex-wrap">
+        <div>
+          <span class="eyebrow">Catálogo del vivero</span>
+          <h2 class="mt-2 text-3xl sm:text-4xl">Plantas ornamentales.</h2>
+          <p class="mt-3 text-[var(--color-text-muted)] max-w-xl leading-relaxed">
+            Una muestra de nuestra producción. Cada planta se entrega sana, establecida y lista
+            para siembra. Los precios se cotizan según cantidad y tamaño.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {plants.map((p) => <PlantCard plant={p} />)}
+      </div>
+
+      <p class="mt-8 text-sm text-[var(--color-text-muted)] text-center">
+        Esta es solo una parte del vivero — manejamos muchas más especies y tamaños.
+        <a href={whatsappUrl('Hola Aboquete, quisiera saber qué otras plantas manejan en el vivero.')} target="_blank" rel="noopener" class="font-medium text-[var(--color-bosque-700)] hover:underline">
+          Pregúntanos por la que buscas.
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ PALMAS, ÁRBOLES Y MÁS ============ -->
+  <section id="proyectos" class="py-16 sm:py-20 bg-[var(--color-bosque-900)] text-white scroll-mt-20">
+    <div class="container-x">
+      <div class="max-w-2xl">
+        <span class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-sol-300)]">
+          <Icon name="sprout" size={16} />
+          Para proyectos
+        </span>
+        <h2 class="mt-2 text-3xl sm:text-4xl text-white">Palmas, árboles y mucho más.</h2>
+        <p class="mt-4 text-white/85 leading-relaxed">
+          Nuestro fuerte es abastecer proyectos completos: paisajismo, urbanizaciones, avenidas,
+          parques y reforestación. Cotizamos por especie, tamaño y volumen — con entrega
+          a nivel nacional.
+        </p>
+      </div>
+
+      <div class="mt-10 grid gap-4 sm:grid-cols-2">
+        {moreCategories.map((c) => (
+          <div class="rounded-xl bg-white/5 border border-white/10 p-6">
+            <h3 class="text-lg font-semibold text-white">{c.name}</h3>
+            <p class="mt-2 text-sm text-white/75 leading-relaxed">{c.detail}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-10 flex flex-wrap items-center gap-4">
+        <a href={whatsappUrl(projectMsg)} target="_blank" rel="noopener" class="btn btn-primary">
+          Cotizar plantas para mi proyecto
+          <Icon name="arrow-right" size={18} />
+        </a>
+        <p class="text-sm text-white/60">
+          Envíanos tu lista de especies o el plano de siembra y te cotizamos completo.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VENTAJA ABOQUETE ============ -->
+  <section class="py-16 sm:py-20">
+    <div class="container-x">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="eyebrow">La ventaja Aboquete</span>
+        <h2 class="mt-3 text-3xl sm:text-4xl">Plantas y suelo, del mismo productor.</h2>
+        <p class="mt-4 text-[var(--color-text-muted)] leading-relaxed">
+          Somos productores de enmiendas orgánicas — nuestras plantas crecen en los mismos
+          sustratos que vendemos. Tu proyecto puede salir completo de un solo lugar.
+        </p>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-3 max-w-4xl mx-auto">
+        <div class="card p-6 text-center">
+          <div class="mx-auto w-12 h-12 rounded-full bg-[var(--color-bosque-50)] flex items-center justify-center text-[var(--color-bosque-700)]">
+            <Icon name="sprout" size={24} />
+          </div>
+          <h3 class="mt-4 font-semibold">Plantas establecidas</h3>
+          <p class="mt-2 text-sm text-[var(--color-text-muted)] leading-relaxed">
+            Cultivadas en sustrato orgánico, entregadas sanas y listas para siembra.
+          </p>
+        </div>
+        <div class="card p-6 text-center">
+          <div class="mx-auto w-12 h-12 rounded-full bg-[var(--color-bosque-50)] flex items-center justify-center text-[var(--color-bosque-700)]">
+            <Icon name="truck" size={24} />
+          </div>
+          <h3 class="mt-4 font-semibold">Entrega nacional</h3>
+          <p class="mt-2 text-sm text-[var(--color-text-muted)] leading-relaxed">
+            Llevamos tu pedido a cualquier punto del país, por planta o por volumen de proyecto.
+          </p>
+        </div>
+        <div class="card p-6 text-center">
+          <div class="mx-auto w-12 h-12 rounded-full bg-[var(--color-bosque-50)] flex items-center justify-center text-[var(--color-bosque-700)]">
+            <Icon name="recycle" size={24} />
+          </div>
+          <h3 class="mt-4 font-semibold">Proyecto completo</h3>
+          <p class="mt-2 text-sm text-[var(--color-text-muted)] leading-relaxed">
+            Plantas + tierra negra + abono orgánico en una sola cotización y una sola entrega.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center">
+        <a href={whatsappUrl(projectMsg)} target="_blank" rel="noopener" class="btn btn-primary">
+          <Icon name="phone" size={18} />
+          Cotizar por WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

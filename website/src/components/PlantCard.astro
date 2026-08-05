@@ -1,0 +1,52 @@
+---
+import { Image } from 'astro:assets';
+import { whatsappUrl } from '../data/site';
+import type { Plant } from '../data/vivero';
+
+interface Props {
+  plant: Plant;
+}
+
+const { plant } = Astro.props;
+const msg = `Hola Aboquete, quisiera cotizar ${plant.name} del vivero. ¿Me pueden dar precio y disponibilidad?`;
+---
+
+<article class="card overflow-hidden flex flex-col h-full" id={`planta-${plant.slug}`}>
+  <div class="aspect-square overflow-hidden bg-[var(--color-crema)]">
+    <Image
+      src={plant.image}
+      alt={`${plant.name} (${plant.scientificName}) — Vivero Aboquete`}
+      widths={[400, 600, 800]}
+      sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+      loading="lazy"
+      class="w-full h-full object-cover"
+    />
+  </div>
+
+  <div class="p-5 flex flex-col gap-3 flex-1">
+    <div>
+      <h3 class="text-lg font-semibold leading-tight">{plant.name}</h3>
+      <p class="mt-0.5 text-sm italic text-[var(--color-text-muted)]">{plant.scientificName}</p>
+    </div>
+
+    <p class="text-sm leading-relaxed">{plant.description}</p>
+
+    <ul class="flex flex-wrap gap-1.5">
+      {plant.tags.map((t) => (
+        <li class="pill">{t}</li>
+      ))}
+    </ul>
+
+    <div class="mt-auto pt-2">
+      <a
+        href={whatsappUrl(msg)}
+        target="_blank"
+        rel="noopener"
+        class="btn btn-primary w-full text-sm"
+        aria-label={`Cotizar ${plant.name} por WhatsApp`}
+      >
+        Cotizar por WhatsApp
+      </a>
+    </div>
+  </div>
+</article>

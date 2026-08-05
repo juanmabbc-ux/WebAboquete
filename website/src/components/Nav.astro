@@ -42,6 +42,16 @@ const isActive = (path: string) => currentPath === path;
         Productos
       </a>
       <a
+        href="/vivero"
+        class:list={[
+          'px-4 py-2 text-sm font-medium rounded-full transition-colors',
+          isActive('/vivero') ? 'text-[var(--color-bosque-700)] bg-[var(--color-bosque-50)]' : 'text-[var(--color-text)] hover:text-[var(--color-bosque-700)] hover:bg-[var(--color-bosque-50)]',
+        ]}
+        aria-current={isActive('/vivero') ? 'page' : undefined}
+      >
+        Vivero
+      </a>
+      <a
         href="/#contacto"
         class="px-4 py-2 text-sm font-medium rounded-full text-[var(--color-text)] hover:text-[var(--color-bosque-700)] hover:bg-[var(--color-bosque-50)] transition-colors"
       >
@@ -82,6 +92,7 @@ const isActive = (path: string) => currentPath === path;
     <nav aria-label="Navegación principal móvil" class="container-x py-4 flex flex-col gap-1">
       <a href="/" class="px-4 py-3 rounded-md text-base font-medium hover:bg-[var(--color-bosque-50)]">Inicio</a>
       <a href="/productos" class="px-4 py-3 rounded-md text-base font-medium hover:bg-[var(--color-bosque-50)]">Productos</a>
+      <a href="/vivero" class="px-4 py-3 rounded-md text-base font-medium hover:bg-[var(--color-bosque-50)]">Vivero</a>
       <a href="/#contacto" class="px-4 py-3 rounded-md text-base font-medium hover:bg-[var(--color-bosque-50)]">Contacto</a>
       <a href={whatsappUrl()} target="_blank" rel="noopener" class="btn btn-primary mt-3 w-full">
         Cotizar por WhatsApp
