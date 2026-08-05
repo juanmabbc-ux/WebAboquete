@@ -2,8 +2,12 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PlantCard from '../components/PlantCard.astro';
 import Icon from '../components/Icon.astro';
+import { Image } from 'astro:assets';
 import { site, whatsappUrl } from '../data/site';
 import { plants, moreCategories } from '../data/vivero';
+
+const heroMain = plants.find((p) => p.slug === 'clusia')!.image;
+const heroAccent = plants.find((p) => p.slug === 'croto-rabo-de-puerco')!.image;
 
 const title = `Vivero Aboquete — Plantas Ornamentales, Palmas y Árboles para Proyectos | ${site.legalName}`;
 const description =
@@ -42,27 +46,87 @@ const breadcrumbLd = {
 
 <BaseLayout title={title} description={description} structuredData={[plantLd, breadcrumbLd]}>
 
-  <!-- ============ PAGE HEADER ============ -->
-  <section class="bg-campo py-14 sm:py-20">
-    <div class="container-x max-w-3xl">
-      <nav aria-label="Migas de pan" class="text-sm text-[var(--color-text-muted)]">
-        <a href="/" class="hover:text-[var(--color-bosque-700)]">Inicio</a>
-        <span class="mx-2">/</span>
-        <span class="text-[var(--color-bosque-700)] font-medium">Vivero</span>
-      </nav>
-      <h1 class="mt-4 text-4xl sm:text-5xl">Vivero Aboquete.</h1>
-      <p class="mt-4 text-lg leading-relaxed text-[var(--color-text-muted)]">
-        Plantas ornamentales, palmas, árboles, setos y cobertoras — cultivadas con nuestros propios
-        sustratos orgánicos. Abastecemos proyectos de paisajismo, constructoras y urbanizaciones
-        con entrega a nivel nacional.
-      </p>
+  <!-- ============ PAGE HEADER (HERO) ============ -->
+  <section class="bg-campo relative overflow-hidden">
+    <div class="container-x grid lg:grid-cols-[1.05fr,1fr] gap-12 lg:gap-10 items-center py-14 sm:py-20 lg:py-24">
 
-      <div class="mt-8 flex flex-wrap gap-3">
-        <a href={whatsappUrl(projectMsg)} target="_blank" rel="noopener" class="btn btn-primary">
-          Cotizar mi proyecto
-          <Icon name="arrow-right" size={18} />
-        </a>
-        <a href="#catalogo" class="btn btn-outline">Ver plantas</a>
+      <!-- Texto -->
+      <div>
+        <nav aria-label="Migas de pan" class="vivero-in text-sm text-[var(--color-text-muted)]">
+          <a href="/" class="hover:text-[var(--color-bosque-700)]">Inicio</a>
+          <span class="mx-2">/</span>
+          <span class="text-[var(--color-bosque-700)] font-medium">Vivero</span>
+        </nav>
+
+        <h1 class="vivero-in vivero-in-1 mt-4 text-4xl sm:text-6xl leading-[1.05]">
+          Verde que llega<br />
+          <span class="text-[var(--color-naranja-400)]">listo para sembrar.</span>
+        </h1>
+
+        <p class="vivero-in vivero-in-2 mt-5 text-lg leading-relaxed text-[var(--color-text-muted)] max-w-xl">
+          Ornamentales, palmas, árboles, setos y cobertoras del <strong class="text-[var(--color-bosque-700)]">Vivero Aboquete</strong> —
+          cultivadas en nuestros propios sustratos orgánicos para paisajismo,
+          constructoras y urbanizaciones.
+        </p>
+
+        <ul class="vivero-in vivero-in-3 mt-6 flex flex-wrap gap-2">
+          <li class="inline-flex items-center gap-1.5 rounded-full bg-white border border-[var(--color-border)] px-3.5 py-1.5 text-sm font-medium shadow-sm">
+            <Icon name="truck" size={15} /> Entrega a nivel nacional
+          </li>
+          <li class="inline-flex items-center gap-1.5 rounded-full bg-white border border-[var(--color-border)] px-3.5 py-1.5 text-sm font-medium shadow-sm">
+            <Icon name="sprout" size={15} /> Sustrato orgánico propio
+          </li>
+          <li class="inline-flex items-center gap-1.5 rounded-full bg-white border border-[var(--color-border)] px-3.5 py-1.5 text-sm font-medium shadow-sm">
+            <Icon name="shield-check" size={15} /> Plantas sanas y establecidas
+          </li>
+        </ul>
+
+        <div class="vivero-in vivero-in-4 mt-8 flex flex-wrap gap-3">
+          <a href={whatsappUrl(projectMsg)} target="_blank" rel="noopener" class="btn btn-primary">
+            Cotizar mi proyecto
+            <Icon name="arrow-right" size={18} />
+          </a>
+          <a href="#catalogo" class="btn btn-outline">Ver plantas</a>
+        </div>
+      </div>
+
+      <!-- Composición visual -->
+      <div class="vivero-in-visual relative max-w-md mx-auto w-full lg:max-w-none pb-10 lg:pb-0">
+        <div class="absolute -inset-8 rounded-full bg-gradient-to-br from-[var(--color-sol-100)] via-[var(--color-lima-100)] to-[var(--color-bosque-50)] blur-3xl opacity-80" aria-hidden="true"></div>
+
+        <div class="relative">
+          <div class="overflow-hidden rounded-[2rem] border-4 border-white shadow-[var(--shadow-lift)] aspect-[4/5] max-h-[520px] w-full">
+            <Image
+              src={heroMain}
+              alt="Clusia del Vivero Aboquete — planta establecida lista para siembra"
+              widths={[500, 700, 900]}
+              sizes="(min-width: 1024px) 44vw, 90vw"
+              loading="eager"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div class="absolute -bottom-8 -left-4 sm:-left-8 w-36 sm:w-44 overflow-hidden rounded-2xl border-4 border-white shadow-[var(--shadow-lift)] rotate-[-4deg] aspect-square">
+            <Image
+              src={heroAccent}
+              alt="Croto Rabo de Puerco — follaje de color del Vivero Aboquete"
+              widths={[200, 320]}
+              sizes="180px"
+              loading="eager"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div class="absolute top-6 -right-2 sm:-right-5 rounded-xl bg-white shadow-[var(--shadow-lift)] border border-[var(--color-border)] px-4 py-3 rotate-[2deg]">
+            <p class="text-2xl font-display font-semibold text-[var(--color-bosque-700)] leading-none">15+</p>
+            <p class="mt-1 text-xs text-[var(--color-text-muted)] font-medium">especies en catálogo<br />y muchas más por encargo</p>
+          </div>
+
+          <div class="absolute -bottom-5 right-4 rounded-full bg-[var(--color-bosque-700)] text-white shadow-[var(--shadow-lift)] px-4 py-2.5 inline-flex items-center gap-2 text-sm font-semibold rotate-[-2deg]">
+            <Icon name="truck" size={16} />
+            Todo Panamá
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -82,7 +146,11 @@ const breadcrumbLd = {
       </div>
 
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {plants.map((p) => <PlantCard plant={p} />)}
+        {plants.map((p) => (
+          <div data-reveal class="h-full">
+            <PlantCard plant={p} />
+          </div>
+        ))}
       </div>
 
       <p class="mt-8 text-sm text-[var(--color-text-muted)] text-center">
@@ -112,7 +180,7 @@ const breadcrumbLd = {
 
       <div class="mt-10 grid gap-4 sm:grid-cols-2">
         {moreCategories.map((c) => (
-          <div class="rounded-xl bg-white/5 border border-white/10 p-6">
+          <div data-reveal class="rounded-xl bg-white/5 border border-white/10 p-6">
             <h3 class="text-lg font-semibold text-white">{c.name}</h3>
             <p class="mt-2 text-sm text-white/75 leading-relaxed">{c.detail}</p>
           </div>
@@ -183,3 +251,50 @@ const breadcrumbLd = {
   </section>
 
 </BaseLayout>
+
+<style is:global>
+  /* Entrada del hero del vivero — escalonada */
+  @keyframes viveroUp {
+    from { opacity: 0; transform: translateY(26px); }
+    to   { opacity: 1; transform: none; }
+  }
+  .vivero-in   { animation: viveroUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
+  .vivero-in-1 { animation-delay: 0.08s; }
+  .vivero-in-2 { animation-delay: 0.16s; }
+  .vivero-in-3 { animation-delay: 0.24s; }
+  .vivero-in-4 { animation-delay: 0.32s; }
+  .vivero-in-visual { animation: viveroUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both; }
+
+  /* Aparición al hacer scroll (la clase la agrega el script — sin JS todo queda visible) */
+  .will-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .will-reveal.revealed {
+    opacity: 1;
+    transform: none;
+  }
+</style>
+
+<script>
+  const els = document.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    els.forEach((el, i) => {
+      el.classList.add('will-reveal');
+      (el as HTMLElement).style.transitionDelay = `${(i % 4) * 70}ms`;
+    });
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) {
+            e.target.classList.add('revealed');
+            io.unobserve(e.target);
+          }
+        }
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -5% 0px' }
+    );
+    els.forEach((el) => io.observe(el));
+  }
+</script>
