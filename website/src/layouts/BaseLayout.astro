@@ -132,6 +132,15 @@ const ldBlocks = [organization, localBusiness, ...structuredData];
     {ldBlocks.map((b) => (
       <script type="application/ld+json" set:html={JSON.stringify(b)} />
     ))}
+
+    <!-- Google tag (gtag.js): Google Ads AW-18371479072 -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=AW-18371479072"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18371479072');
+    </script>
   </head>
   <body>
     <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-white focus:px-4 focus:py-2 focus:rounded-md focus:shadow-md">
@@ -146,5 +155,18 @@ const ldBlocks = [organization, localBusiness, ...structuredData];
 
     <Footer />
     <WhatsAppFloat />
+
+    <!-- Track WhatsApp clicks (main site conversion) -->
+    <script is:inline>
+      document.addEventListener('click', function (e) {
+        var a = e.target && e.target.closest ? e.target.closest('a[href*="wa.me"]') : null;
+        if (a && typeof gtag === 'function') {
+          gtag('event', 'whatsapp_click', {
+            page_path: location.pathname,
+            link_text: (a.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 80),
+          });
+        }
+      });
+    </script>
   </body>
 </html>
