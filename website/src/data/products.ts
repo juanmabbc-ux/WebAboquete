@@ -200,6 +200,20 @@ export const bulk: BulkProduct[] = [
     use: 'Canchas, jardines, áreas verdes y campos deportivos',
     category: 'granel',
   },
+  {
+    slug: 'tierra-siembra-arboles',
+    name: 'Tierra para Siembra de Árboles',
+    formula: 'Mezcla profunda de tierra negra y enmienda orgánica',
+    use: 'Arborización, reforestación y proyectos de urbanización',
+    category: 'granel',
+  },
+  {
+    slug: 'mezcla-personalizada',
+    name: 'Mezcla Personalizada',
+    formula: 'A tu especificación — combinamos aluvión, caballaza, cascarilla y arena',
+    use: 'Proyectos con requerimientos técnicos específicos de suelo',
+    category: 'granel',
+  },
 ];
 
 /** Featured set for the homepage preview */
