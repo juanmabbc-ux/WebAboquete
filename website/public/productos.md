@@ -1,6 +1,6 @@
 # Catálogo de Productos — Aboquete S.A.
 
-Última actualización: Mayo 2026
+Última actualización: Agosto 2026
 Empresa: Aboquete S.A. ("Siempre Verde")
 RUC: 164705-1-388664 DV80
 Registro MIDA: #2253
@@ -18,35 +18,35 @@ Email: info@aboquete.com
 - **Descripción**: Caballaza 100% compostada — fertilizante orgánico puro.
 - **Composición**: Materia Orgánica 40.75% · Nitrógeno (N) 2.37% · Fósforo (P₂O₅) 3.12% · Calcio (Ca) 2.87%.
 - **Usos**: Plantas ornamentales, frutales, hortalizas, semilleros, jardines, macetas.
-- **Presentaciones**: 5 lbs (2.3 kg) · 100 lbs (45.4 kg).
+- **Presentaciones**: 100 lbs (45.4 kg) · 5 lbs (2.3 kg).
+- **Exportación**: Pallet de 25 sacos ≈ 1.13 t · Entrega FOB Panamá.
 
-### Tierra Negra
-- **Descripción**: Tierra preparada — aluvión de río + caballaza compostada + cascarilla de arroz.
+### Tierra Negra Abonada
+- **Descripción**: Tierra preparada y enriquecida con abono orgánico — aluvión de río + caballaza compostada + cascarilla de arroz.
 - **Usos**: Trasplantes, macetas, jardines y huertos caseros.
-- **Presentaciones**: 15 lbs (6.8 kg) · 100 lbs (45.4 kg).
+- **Presentaciones**: 100 lbs (45.4 kg) · 15 lbs (6.8 kg).
+
+### Tierra para Jardín
+- **Descripción**: Tierra preparada para jardinería general y áreas verdes.
+- **Usos**: Áreas verdes, relleno de jardineras, establecimiento de césped, nivelación y siembra.
+- **Presentaciones**: 100 lbs (45.4 kg).
+
+### Cascarilla de Arroz
+- **Descripción**: Sustrato inerte solarizado — alta porosidad y drenaje.
+- **Características**: Alto contenido de sílice y potasio, ligera, larga durabilidad.
+- **Usos**: Mezclas de sustrato, semilleros y cultivos en contenedor.
+- **Presentaciones**: 80 lts · 6 lts.
+
+### Aluvión de Río
+- **Descripción**: Arena hortícola natural — granulometría fina a media.
+- **Usos**: Suculentas, cactus, semilleros y mezclas de sustrato.
+- **Presentaciones**: 100 lbs · 8 lbs.
 
 ### Humus de Lombriz
 - **Descripción**: Vermicompost puro de Lombriz Roja Californiana (Eisenia fetida).
 - **Características**: Nutrientes de liberación lenta, enzimas, ácidos húmicos, microorganismos benéficos.
 - **Usos**: Germinación, enraizamiento y crecimiento vegetal.
 - **Presentaciones**: 8 lbs (3.6 kg).
-
-### Cascarilla de Arroz
-- **Descripción**: Sustrato inerte solarizado — alta porosidad y drenaje.
-- **Características**: Alto contenido de sílice y potasio, ligera, larga durabilidad.
-- **Usos**: Mezclas de sustrato, semilleros y cultivos en contenedor.
-- **Presentaciones**: 6 lts · 80 lts.
-
-### Aluvión de Río
-- **Descripción**: Arena hortícola natural — granulometría fina a media.
-- **Usos**: Suculentas, cactus, semilleros y mezclas de sustrato.
-- **Presentaciones**: 8 lbs · 100 lbs.
-
-### Enmienda Agrícola (Mayoreo / Exportación)
-- **Descripción**: Caballaza compostada en formato mayoreo y exportación.
-- **Composición**: M.O. 40.75% · N 2.37% · P₂O₅ 3.12%.
-- **Logística**: Pallet de 25 sacos ≈ 1.13 t · Entrega FOB Panamá.
-- **Presentaciones**: Saco 100 lbs · Pallet 25 sacos.
 
 ---
 
@@ -64,7 +64,15 @@ Email: info@aboquete.com
 - **Fórmula**: Tierra negra + abono orgánico + arena aluvial.
 - **Uso principal**: Canchas, jardines, áreas verdes, campos deportivos.
 
-Los productos a granel se cotizan según volumen y zona de entrega.
+### Tierra para Siembra de Árboles
+- **Fórmula**: Mezcla profunda de tierra negra y enmienda orgánica.
+- **Uso principal**: Arborización, reforestación y proyectos de urbanización.
+
+### Mezcla Personalizada
+- **Fórmula**: A la especificación del proyecto — aluvión, caballaza, cascarilla y arena.
+- **Uso principal**: Proyectos con requerimientos técnicos específicos de suelo.
+
+Los productos a granel se cotizan según volumen y zona de entrega — sin mínimos ni máximos.
 
 ---
 

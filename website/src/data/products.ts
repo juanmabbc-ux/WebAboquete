@@ -6,8 +6,9 @@
  * definition (40–60 words) so AI search systems can quote it standalone.
  */
 
-import abonoImg from '../assets/products/abono_organico.jpg';
-import tierraImg from '../assets/products/tierra_negra.jpg';
+import abonoImg from '../assets/products/saco_abono_100.jpg';
+import tierraImg from '../assets/products/tierra_negra_abonada.jpg';
+import tierraJardinImg from '../assets/products/tierra_para_jardin.jpg';
 import humusImg from '../assets/products/humus_de_lombriz.jpg';
 import cascarillaImg from '../assets/products/cascarilla_de_arroz.jpg';
 import aluvionImg from '../assets/products/aluvion_de_rio.jpg';
@@ -41,32 +42,6 @@ export interface BulkProduct {
 
 export const packaged: PackagedProduct[] = [
   {
-    slug: 'enmienda-agricola',
-    name: 'Enmienda Agrícola',
-    shortName: 'Enmienda Agrícola — Mayoreo',
-    tagline: 'Mayoreo y exportación FOB Panamá',
-    definition:
-      'La Enmienda Agrícola Aboquete es caballaza compostada en formato mayoreo y exportación. Se entrega en sacos de 100 lbs o pallets de 25 sacos (~1.13 toneladas), con composición certificada de M.O. 40.75%, N 2.37% y P₂O₅ 3.12%. Disponible FOB Panamá para mercados de exportación.',
-    description:
-      'Para fincas, viveros, paisajistas y exportadores. Mismos parámetros que nuestro abono empacado — en volumen.',
-    composition: [
-      { label: 'Materia Orgánica', value: '40.75%' },
-      { label: 'Nitrógeno (N)', value: '2.37%' },
-      { label: 'Fósforo (P₂O₅)', value: '3.12%' },
-    ],
-    uses: [
-      'Producción agrícola comercial',
-      'Viveros y paisajismo',
-      'Exportación FOB Panamá',
-    ],
-    presentations: [
-      { size: 'Saco', weight: '100 lbs' },
-      { size: 'Pallet', weight: '25 sacos · ~1.13 t' },
-    ],
-    image: abonoImg,
-    category: 'empacado',
-  },
-  {
     slug: 'abono-organico',
     name: 'Abono Orgánico',
     tagline: 'Caballaza 100% compostada',
@@ -94,13 +69,13 @@ export const packaged: PackagedProduct[] = [
     category: 'empacado',
   },
   {
-    slug: 'tierra-negra',
-    name: 'Tierra Negra',
-    tagline: 'Tierra preparada lista para sembrar',
+    slug: 'tierra-negra-abonada',
+    name: 'Tierra Negra Abonada',
+    tagline: 'Tierra preparada y enriquecida, lista para sembrar',
     definition:
-      'La Tierra Negra Aboquete es una mezcla preparada de aluvión de río, caballaza compostada y cascarilla de arroz. Equilibra drenaje, materia orgánica y aireación para trasplantes, macetas, jardines y huertos caseros — lista para usar directamente, sin preparación adicional.',
+      'La Tierra Negra Abonada Aboquete es una mezcla preparada de aluvión de río, caballaza compostada y cascarilla de arroz, enriquecida con abono orgánico. Equilibra drenaje, materia orgánica y aireación para trasplantes, macetas, jardines y huertos — lista para usar directamente, sin preparación adicional.',
     description:
-      'Mezcla profesional balanceada para que tus plantas arranquen con el pie derecho. Drena bien, retiene la humedad justa y nutre desde el primer día.',
+      'Mezcla profesional balanceada y enriquecida con abono orgánico. Drena bien, retiene la humedad justa y nutre desde el primer día.',
     uses: [
       'Trasplantes',
       'Macetas y jardineras',
@@ -112,6 +87,26 @@ export const packaged: PackagedProduct[] = [
       { size: '15 lbs', weight: '6.8 kg' },
     ],
     image: tierraImg,
+    category: 'empacado',
+  },
+  {
+    slug: 'tierra-para-jardin',
+    name: 'Tierra para Jardín',
+    tagline: 'Tierra lista para áreas verdes y jardinería general',
+    definition:
+      'La Tierra para Jardín Aboquete es una tierra preparada para jardinería general: siembra en áreas verdes, relleno de jardineras, nivelación de terreno y establecimiento de césped y plantas ornamentales. Se entrega en saco de 100 lbs, lista para aplicar.',
+    description:
+      'La base confiable para tu jardín: tierra preparada para siembra, relleno y áreas verdes en general.',
+    uses: [
+      'Áreas verdes y jardines',
+      'Relleno de jardineras',
+      'Establecimiento de césped',
+      'Nivelación y siembra general',
+    ],
+    presentations: [
+      { size: '100 lbs', weight: '45.4 kg' },
+    ],
+    image: tierraJardinImg,
     category: 'empacado',
   },
   {
@@ -219,7 +214,7 @@ export const bulk: BulkProduct[] = [
 /** Featured set for the homepage preview */
 export const featuredSlugs = [
   'abono-organico',
-  'tierra-negra',
+  'tierra-negra-abonada',
   'humus-de-lombriz',
   'cascarilla-de-arroz',
 ];
