@@ -39,7 +39,7 @@ export const site = {
 
   // ----- Default SEO -----
   defaultDescription:
-    'Aboquete S.A. — proveedor mayorista de abono orgánico, tierra negra, humus de lombriz y sustratos a base de caballaza compostada. Volumen para fincas, constructoras, viveros y cadenas — también al detal. Respaldo SENACYT-CECOM, Registro MIDA #2253. Entregas en todo Panamá.',
+    'Aboquete S.A. — el aliado de tu proyecto de jardinería y paisajismo. Tierra negra, abono orgánico, sustratos, mezclas personalizadas y plantas de vivero, en cualquier cantidad y con entrega en todo Panamá.',
   keywords: [
     'abono orgánico Panamá',
     'caballaza compostada',

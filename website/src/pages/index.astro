@@ -10,9 +10,9 @@ import logoSymbol from '../assets/brand/logo.jpg';
 
 const featured = packaged.filter((p) => featuredSlugs.includes(p.slug));
 
-const title = `${site.legalName} — Proveedor Mayorista de Abono Orgánico y Tierra Negra en Panamá | ${site.tagline}`;
+const title = `${site.legalName} — El Aliado de tu Proyecto de Jardinería y Paisajismo en Panamá | ${site.tagline}`;
 const description =
-  'Proveedor mayorista de abono orgánico, tierra negra, sustratos y plantas de vivero en Panamá. Volquetes, pallets y exportación FOB para fincas, constructoras, viveros y cadenas — también al detal. Respaldo SENACYT-CECOM y Registro MIDA #2253.';
+  'Todo para tu proyecto de jardinería y paisajismo, de un solo proveedor: tierra negra, abono orgánico, sustratos, mezclas personalizadas y plantas de vivero. Cualquier cantidad, del saco al volquete, con entrega en todo Panamá.';
 ---
 
 <BaseLayout title={title} description={description}>
@@ -26,13 +26,13 @@ const description =
           Proveedor mayorista · Desde el año 2000
         </span>
         <h1 class="mt-5 text-4xl sm:text-5xl lg:text-6xl leading-[1.05]">
-          Abastecemos el verde<br />
-          <span class="text-[var(--color-naranja-400)]">de todo Panamá.</span>
+          El aliado de tu proyecto de<br />
+          <span class="text-[var(--color-naranja-400)]">jardinería y paisajismo.</span>
         </h1>
         <p class="mt-6 text-lg leading-relaxed text-[var(--color-text-muted)] max-w-xl">
-          Abono orgánico, tierra negra, sustratos y plantas de vivero <strong>por volumen</strong> —
-          volquetes, pallets y exportación FOB para fincas, constructoras, viveros y cadenas
-          comerciales. Caballaza 100% compostada con respaldo SENACYT-CECOM y Registro MIDA #{site.midaRegistro}.
+          Todo lo que tu proyecto necesita, de un solo proveedor: tierra negra, abono orgánico,
+          sustratos, mezclas personalizadas y plantas de vivero — en cualquier cantidad, del saco
+          al volquete, con entrega en todo Panamá.
         </p>
 
         <div class="mt-8 flex flex-wrap gap-3">
@@ -83,7 +83,7 @@ const description =
   <section class="py-12 sm:py-16 bg-[var(--color-crema)] border-y border-[var(--color-border)]">
     <div class="container-x">
       <p class="text-center text-xs font-semibold uppercase tracking-[0.18em] text-[var(--color-bosque-700)]">
-        Avalado, registrado y verificado
+        Un solo proveedor para todo tu proyecto
       </p>
       <div class="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-6">
         <div class="text-center">
@@ -91,16 +91,16 @@ const description =
           <p class="mt-1 text-sm text-[var(--color-text-muted)]">años en agroindustria</p>
         </div>
         <div class="text-center">
-          <p class="text-base sm:text-lg font-semibold text-[var(--color-bosque-700)]">MIDA</p>
-          <p class="mt-1 text-sm text-[var(--color-text-muted)]">Registro #{site.midaRegistro}</p>
+          <p class="text-base sm:text-lg font-semibold text-[var(--color-bosque-700)]">Suelo + plantas</p>
+          <p class="mt-1 text-sm text-[var(--color-text-muted)]">tierra, sustratos y vivero juntos</p>
         </div>
         <div class="text-center">
-          <p class="text-base sm:text-lg font-semibold text-[var(--color-bosque-700)]">SENACYT-CECOM</p>
-          <p class="mt-1 text-sm text-[var(--color-text-muted)]">Proyecto {site.senacytProject}</p>
+          <p class="text-base sm:text-lg font-semibold text-[var(--color-bosque-700)]">Cualquier cantidad</p>
+          <p class="mt-1 text-sm text-[var(--color-text-muted)]">del saco a la flota de volquetes</p>
         </div>
         <div class="text-center">
-          <p class="text-base sm:text-lg font-semibold text-[var(--color-bosque-700)]">ITBMS exento</p>
-          <p class="mt-1 text-sm text-[var(--color-text-muted)]">Cert. {site.itbmsCert}</p>
+          <p class="text-base sm:text-lg font-semibold text-[var(--color-bosque-700)]">Entrega nacional</p>
+          <p class="mt-1 text-sm text-[var(--color-text-muted)]">a cualquier punto de Panamá</p>
         </div>
       </div>
     </div>
@@ -183,9 +183,9 @@ const description =
           <span class="inline-flex w-12 h-12 rounded-xl items-center justify-center bg-[var(--color-naranja-100)] text-[var(--color-bosque-700)]">
             <Icon name="shield-check" size={26} />
           </span>
-          <h3 class="mt-5 text-lg">Respaldo Científico</h3>
+          <h3 class="mt-5 text-lg">Proyecto Completo</h3>
           <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-muted)]">
-            Producto avalado por SENACYT-CECOM (Proyecto {site.senacytProject}) y Registro MIDA #{site.midaRegistro}.
+            Tierra, abono, sustratos y plantas de vivero en una sola cotización y una sola entrega.
           </p>
         </div>
 
