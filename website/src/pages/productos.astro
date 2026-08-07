@@ -207,6 +207,51 @@ const breadcrumbLd = {
     </div>
   </section>
 
+  <!-- ============ MATERIA PRIMA ESTRELLA — CABALLAZA ============ -->
+  <section class="py-16 sm:py-20 bg-[var(--color-bosque-900)] text-white">
+    <div class="container-x grid lg:grid-cols-2 gap-14 items-center">
+      <div>
+        <span class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-sol-300)]">
+          <span class="w-2 h-2 rounded-full bg-[var(--color-sol-400)]"></span>
+          Materia prima estrella
+        </span>
+        <h2 class="mt-3 text-3xl sm:text-4xl text-white">
+          La caballaza compostada.<br />
+          <span class="text-[var(--color-sol-300)]">El corazón de cada producto.</span>
+        </h2>
+        <p class="mt-5 text-white/85 leading-relaxed">
+          Estiércol de caballo procesado por compostaje hasta convertirse en un fertilizante orgánico
+          estable, rico y vivo. Esta es la base de nuestro abono, nuestra tierra negra preparada y
+          nuestra enmienda agrícola — y la razón por la que el suelo donde la usas vuelve a producir.
+        </p>
+
+        <ul class="mt-8 grid gap-3">
+          <li class="flex gap-3"><span class="text-[var(--color-sol-300)] mt-1"><Icon name="check" size={18}/></span><span>Mejora la <strong>estructura del suelo</strong>: aireación y retención de humedad.</span></li>
+          <li class="flex gap-3"><span class="text-[var(--color-sol-300)] mt-1"><Icon name="check" size={18}/></span><span>Aporta <strong>materia orgánica</strong> e incrementa la actividad biológica.</span></li>
+          <li class="flex gap-3"><span class="text-[var(--color-sol-300)] mt-1"><Icon name="check" size={18}/></span><span>Favorece el <strong>desarrollo radicular</strong> desde el primer día.</span></li>
+          <li class="flex gap-3"><span class="text-[var(--color-sol-300)] mt-1"><Icon name="check" size={18}/></span><span>Enriquece con <strong>nitrógeno, fósforo y potasio</strong> en forma orgánica.</span></li>
+        </ul>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        {[
+          { label: 'Materia Orgánica', value: '40.75%' },
+          { label: 'Nitrógeno (N)', value: '2.37%' },
+          { label: 'Fósforo (P₂O₅)', value: '3.12%' },
+          { label: 'Calcio (Ca)', value: '2.87%' },
+        ].map((s) => (
+          <div class="rounded-2xl bg-white/5 border border-white/10 p-6">
+            <p class="text-xs uppercase tracking-wider text-white/60">{s.label}</p>
+            <p class="mt-2 text-3xl font-display font-semibold text-[var(--color-sol-300)]">{s.value}</p>
+          </div>
+        ))}
+        <p class="col-span-2 text-xs text-white/60 leading-relaxed">
+          Composición típica del Abono Orgánico Aboquete.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ FAQ ============ -->
   <section class="py-20 sm:py-24">
     <div class="container-x max-w-3xl">
