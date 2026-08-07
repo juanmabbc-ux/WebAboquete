@@ -41,116 +41,6 @@ export interface BulkProduct {
 
 export const packaged: PackagedProduct[] = [
   {
-    slug: 'abono-organico',
-    name: 'Abono Orgánico',
-    tagline: 'Caballaza 100% compostada',
-    definition:
-      'El Abono Orgánico Aboquete es caballaza de caballo 100% compostada. Aporta materia orgánica al 40.75% y libera nitrógeno, fósforo y potasio en forma orgánica para alimentar plantas ornamentales, frutales, hortalizas y semilleros sin químicos sintéticos ni hormonas.',
-    description:
-      'Fertilizante orgánico puro a base de caballaza estabilizada por compostaje. Mejora la fertilidad natural del suelo mientras alimenta tus plantas de forma sostenida.',
-    composition: [
-      { label: 'Materia Orgánica', value: '40.75%' },
-      { label: 'Nitrógeno (N)', value: '2.37%' },
-      { label: 'Fósforo (P₂O₅)', value: '3.12%' },
-      { label: 'Calcio (Ca)', value: '2.87%' },
-    ],
-    uses: [
-      'Plantas ornamentales',
-      'Frutales y hortalizas',
-      'Semilleros',
-      'Jardines y macetas',
-    ],
-    presentations: [
-      { size: '5 lbs', weight: '2.3 kg' },
-      { size: '100 lbs', weight: '45.4 kg' },
-    ],
-    image: abonoImg,
-    category: 'empacado',
-  },
-  {
-    slug: 'tierra-negra',
-    name: 'Tierra Negra',
-    tagline: 'Tierra preparada lista para sembrar',
-    definition:
-      'La Tierra Negra Aboquete es una mezcla preparada de aluvión de río, caballaza compostada y cascarilla de arroz. Equilibra drenaje, materia orgánica y aireación para trasplantes, macetas, jardines y huertos caseros — lista para usar directamente, sin preparación adicional.',
-    description:
-      'Mezcla profesional balanceada para que tus plantas arranquen con el pie derecho. Drena bien, retiene la humedad justa y nutre desde el primer día.',
-    uses: [
-      'Trasplantes',
-      'Macetas y jardineras',
-      'Jardines',
-      'Huertos caseros',
-    ],
-    presentations: [
-      { size: '15 lbs', weight: '6.8 kg' },
-      { size: '100 lbs', weight: '45.4 kg' },
-    ],
-    image: tierraImg,
-    category: 'empacado',
-  },
-  {
-    slug: 'humus-de-lombriz',
-    name: 'Humus de Lombriz',
-    tagline: 'Vermicompost premium',
-    definition:
-      'El Humus de Lombriz Aboquete es vermicompost producido por la Lombriz Roja Californiana (Eisenia fetida). Aporta enzimas, ácidos húmicos y microorganismos benéficos que activan el suelo, además de nutrientes de liberación lenta ideales para germinación, enraizamiento y crecimiento vegetal.',
-    description:
-      'El “oro negro” del jardín: nutre, oxigena y revive suelos cansados con vida microbiana viva.',
-    uses: [
-      'Germinación de semillas',
-      'Enraizamiento de esquejes',
-      'Crecimiento vegetal',
-      'Mezclas premium de sustrato',
-    ],
-    presentations: [
-      { size: '8 lbs', weight: '3.6 kg' },
-    ],
-    image: humusImg,
-    category: 'empacado',
-  },
-  {
-    slug: 'cascarilla-de-arroz',
-    name: 'Cascarilla de Arroz',
-    tagline: 'Sustrato solarizado de alto drenaje',
-    definition:
-      'La Cascarilla de Arroz Aboquete es un sustrato inerte solarizado de alta porosidad. Su alto contenido de sílice y potasio, sumado a su ligereza y durabilidad, la hace ideal para mezclas de sustrato, semilleros y cultivos en contenedor que requieren drenaje y aireación.',
-    description:
-      'Aireación, drenaje y peso ligero. Perfecta para mezclar con tierra negra y para todo cultivo en contenedor.',
-    uses: [
-      'Mezclas de sustrato',
-      'Semilleros',
-      'Cultivos en contenedor',
-      'Mulching superficial',
-    ],
-    presentations: [
-      { size: '6 lts' },
-      { size: '80 lts' },
-    ],
-    image: cascarillaImg,
-    category: 'empacado',
-  },
-  {
-    slug: 'aluvion-de-rio',
-    name: 'Aluvión de Río',
-    tagline: 'Arena hortícola natural',
-    definition:
-      'El Aluvión de Río Aboquete es arena hortícola natural con granulometría fina a media. Aporta el drenaje preciso que necesitan suculentas, cactus y semilleros, y funciona como componente base en mezclas de sustrato profesionales para viveros y jardines.',
-    description:
-      'Arena hortícola limpia, ideal cuando el drenaje es la prioridad. Lo que tu cactus, suculenta o semillero estaba esperando.',
-    uses: [
-      'Suculentas y cactus',
-      'Semilleros',
-      'Mezclas de sustrato',
-      'Drenaje en macetas',
-    ],
-    presentations: [
-      { size: '8 lbs' },
-      { size: '100 lbs' },
-    ],
-    image: aluvionImg,
-    category: 'empacado',
-  },
-  {
     slug: 'enmienda-agricola',
     name: 'Enmienda Agrícola',
     shortName: 'Enmienda Agrícola — Mayoreo',
@@ -174,6 +64,116 @@ export const packaged: PackagedProduct[] = [
       { size: 'Pallet', weight: '25 sacos · ~1.13 t' },
     ],
     image: abonoImg,
+    category: 'empacado',
+  },
+  {
+    slug: 'abono-organico',
+    name: 'Abono Orgánico',
+    tagline: 'Caballaza 100% compostada',
+    definition:
+      'El Abono Orgánico Aboquete es caballaza de caballo 100% compostada. Aporta materia orgánica al 40.75% y libera nitrógeno, fósforo y potasio en forma orgánica para alimentar plantas ornamentales, frutales, hortalizas y semilleros sin químicos sintéticos ni hormonas.',
+    description:
+      'Fertilizante orgánico puro a base de caballaza estabilizada por compostaje. Mejora la fertilidad natural del suelo mientras alimenta tus plantas de forma sostenida.',
+    composition: [
+      { label: 'Materia Orgánica', value: '40.75%' },
+      { label: 'Nitrógeno (N)', value: '2.37%' },
+      { label: 'Fósforo (P₂O₅)', value: '3.12%' },
+      { label: 'Calcio (Ca)', value: '2.87%' },
+    ],
+    uses: [
+      'Plantas ornamentales',
+      'Frutales y hortalizas',
+      'Semilleros',
+      'Jardines y macetas',
+    ],
+    presentations: [
+      { size: '100 lbs', weight: '45.4 kg' },
+      { size: '5 lbs', weight: '2.3 kg' },
+    ],
+    image: abonoImg,
+    category: 'empacado',
+  },
+  {
+    slug: 'tierra-negra',
+    name: 'Tierra Negra',
+    tagline: 'Tierra preparada lista para sembrar',
+    definition:
+      'La Tierra Negra Aboquete es una mezcla preparada de aluvión de río, caballaza compostada y cascarilla de arroz. Equilibra drenaje, materia orgánica y aireación para trasplantes, macetas, jardines y huertos caseros — lista para usar directamente, sin preparación adicional.',
+    description:
+      'Mezcla profesional balanceada para que tus plantas arranquen con el pie derecho. Drena bien, retiene la humedad justa y nutre desde el primer día.',
+    uses: [
+      'Trasplantes',
+      'Macetas y jardineras',
+      'Jardines',
+      'Huertos caseros',
+    ],
+    presentations: [
+      { size: '100 lbs', weight: '45.4 kg' },
+      { size: '15 lbs', weight: '6.8 kg' },
+    ],
+    image: tierraImg,
+    category: 'empacado',
+  },
+  {
+    slug: 'cascarilla-de-arroz',
+    name: 'Cascarilla de Arroz',
+    tagline: 'Sustrato solarizado de alto drenaje',
+    definition:
+      'La Cascarilla de Arroz Aboquete es un sustrato inerte solarizado de alta porosidad. Su alto contenido de sílice y potasio, sumado a su ligereza y durabilidad, la hace ideal para mezclas de sustrato, semilleros y cultivos en contenedor que requieren drenaje y aireación.',
+    description:
+      'Aireación, drenaje y peso ligero. Perfecta para mezclar con tierra negra y para todo cultivo en contenedor.',
+    uses: [
+      'Mezclas de sustrato',
+      'Semilleros',
+      'Cultivos en contenedor',
+      'Mulching superficial',
+    ],
+    presentations: [
+      { size: '80 lts' },
+      { size: '6 lts' },
+    ],
+    image: cascarillaImg,
+    category: 'empacado',
+  },
+  {
+    slug: 'aluvion-de-rio',
+    name: 'Aluvión de Río',
+    tagline: 'Arena hortícola natural',
+    definition:
+      'El Aluvión de Río Aboquete es arena hortícola natural con granulometría fina a media. Aporta el drenaje preciso que necesitan suculentas, cactus y semilleros, y funciona como componente base en mezclas de sustrato profesionales para viveros y jardines.',
+    description:
+      'Arena hortícola limpia, ideal cuando el drenaje es la prioridad. Lo que tu cactus, suculenta o semillero estaba esperando.',
+    uses: [
+      'Suculentas y cactus',
+      'Semilleros',
+      'Mezclas de sustrato',
+      'Drenaje en macetas',
+    ],
+    presentations: [
+      { size: '100 lbs' },
+      { size: '8 lbs' },
+    ],
+    image: aluvionImg,
+    category: 'empacado',
+  },
+  {
+    slug: 'humus-de-lombriz',
+    name: 'Humus de Lombriz',
+    tagline: 'Vermicompost premium',
+    definition:
+      'El Humus de Lombriz Aboquete es vermicompost producido por la Lombriz Roja Californiana (Eisenia fetida). Aporta enzimas, ácidos húmicos y microorganismos benéficos que activan el suelo, además de nutrientes de liberación lenta ideales para germinación, enraizamiento y crecimiento vegetal.',
+    description:
+      'El “oro negro” del jardín: nutre, oxigena y revive suelos cansados con vida microbiana viva.',
+    uses: [
+      'Germinación de semillas',
+      'Enraizamiento de esquejes',
+      'Crecimiento vegetal',
+      'Mezclas premium de sustrato',
+    ],
+    presentations: [
+      { size: '8 lbs', weight: '3.6 kg' },
+    ],
+    image: humusImg,
     category: 'empacado',
   },
 ];

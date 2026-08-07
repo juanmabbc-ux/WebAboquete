@@ -3,7 +3,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { Image } from 'astro:assets';
 import Icon from '../components/Icon.astro';
 import { site, whatsappUrl } from '../data/site';
-import logoSymbol from '../assets/brand/logo.jpg';
 import granelImg from '../assets/products/tierra_negra.jpg';
 import empacadoImg from '../assets/products/abono_organico.jpg';
 import viveroImg from '../assets/vivero/clusia.jpg';
@@ -44,8 +43,8 @@ const doors = [
 
   <!-- ============ HERO ============ -->
   <section class="relative bg-campo pt-12 sm:pt-20 pb-16 sm:pb-20 overflow-hidden">
-    <div class="container-x grid lg:grid-cols-[1.1fr,0.9fr] gap-12 items-center relative z-10">
-      <div>
+    <div class="container-x relative z-10">
+      <div class="max-w-3xl">
         <span class="eyebrow">
           <span class="w-2 h-2 rounded-full bg-[var(--color-naranja-400)]"></span>
           Proveedor mayorista · Desde el año 2000
@@ -69,18 +68,6 @@ const doors = [
             Ver qué ofrecemos
           </a>
         </div>
-      </div>
-
-      <div class="relative aspect-square max-w-md mx-auto w-full hidden lg:block">
-        <div class="absolute inset-0 rounded-full bg-gradient-to-br from-[var(--color-sol-100)] via-[var(--color-lima-100)] to-[var(--color-bosque-50)] blur-3xl opacity-70"></div>
-        <Image
-          src={logoSymbol}
-          alt="Aboquete — emblema sol sobre campos verdes"
-          widths={[400, 600]}
-          sizes="(min-width: 1024px) 400px, 320px"
-          loading="eager"
-          class="relative w-full h-full object-contain drop-shadow-2xl"
-        />
       </div>
     </div>
   </section>
