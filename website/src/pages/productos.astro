@@ -98,37 +98,17 @@ const breadcrumbLd = {
       </nav>
       <h1 class="mt-4 text-4xl sm:text-5xl">Catálogo Aboquete.</h1>
       <p class="mt-4 text-lg leading-relaxed text-[var(--color-text-muted)]">
-        Abono orgánico, tierra negra, humus de lombriz, cascarilla de arroz, aluvión de río y enmienda
-        agrícola — empacado para hogar y jardín, o a granel para fincas y proyectos comerciales.
+        Enmienda agrícola, tierra negra y sustratos a granel por volquete para fincas, constructoras
+        y proyectos — y línea empacada con composición certificada para cadenas, comercios, hogar y jardín.
       </p>
 
       <div class="mt-8 flex gap-2 p-1 rounded-full bg-white border border-[var(--color-border)] w-fit shadow-sm">
-        <a href="#empacados" class="px-5 py-2 text-sm font-medium rounded-full bg-[var(--color-bosque-700)] text-white">
-          Empacados
-        </a>
-        <a href="#granel" class="px-5 py-2 text-sm font-medium rounded-full text-[var(--color-text)] hover:bg-[var(--color-bosque-50)] transition-colors">
+        <a href="#granel" class="px-5 py-2 text-sm font-medium rounded-full bg-[var(--color-bosque-700)] text-white">
           A granel
         </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ EMPACADOS ============ -->
-  <section id="empacados" class="py-16 sm:py-20 scroll-mt-20">
-    <div class="container-x">
-      <div class="flex items-end justify-between gap-6 mb-10 flex-wrap">
-        <div>
-          <span class="eyebrow">Sección 1</span>
-          <h2 class="mt-2 text-3xl sm:text-4xl">Productos empacados</h2>
-          <p class="mt-3 text-[var(--color-text-muted)] max-w-xl leading-relaxed">
-            Para jardín, hogar y agricultura. Cada producto incluye composición certificada,
-            usos recomendados y presentaciones disponibles.
-          </p>
-        </div>
-      </div>
-
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {packaged.map((p) => <ProductCard product={p} />)}
+        <a href="#empacados" class="px-5 py-2 text-sm font-medium rounded-full text-[var(--color-text)] hover:bg-[var(--color-bosque-50)] transition-colors">
+          Empacados
+        </a>
       </div>
     </div>
   </section>
@@ -139,12 +119,13 @@ const breadcrumbLd = {
       <div class="max-w-2xl">
         <span class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-sol-300)]">
           <Icon name="truck" size={16} />
-          Sección 2
+          Mayoreo y proyectos
         </span>
         <h2 class="mt-2 text-3xl sm:text-4xl text-white">Productos a granel</h2>
         <p class="mt-4 text-white/85 leading-relaxed">
-          Para fincas, viveros, paisajismo, reforestación y proyectos de construcción.
-          Se cotizan por volumen y zona de entrega.
+          Nuestra línea principal: volquetes para fincas, viveros, paisajismo, reforestación y
+          proyectos de construcción. Se cotizan por volumen y zona de entrega — incluyendo
+          exportación FOB Panamá.
         </p>
       </div>
 
@@ -202,6 +183,27 @@ const breadcrumbLd = {
       <p class="mt-6 text-sm text-white/60">
         Los productos a granel se cotizan según volumen y zona de entrega.
       </p>
+    </div>
+  </section>
+
+  <!-- ============ EMPACADOS ============ -->
+  <section id="empacados" class="py-16 sm:py-20 scroll-mt-20">
+    <div class="container-x">
+      <div class="flex items-end justify-between gap-6 mb-10 flex-wrap">
+        <div>
+          <span class="eyebrow">Línea empacada</span>
+          <h2 class="mt-2 text-3xl sm:text-4xl">Productos empacados</h2>
+          <p class="mt-3 text-[var(--color-text-muted)] max-w-xl leading-relaxed">
+            Presentaciones para cadenas, comercios y agroservicios — y también al detal para
+            hogar y jardín. Cada producto incluye composición certificada, usos recomendados
+            y presentaciones disponibles.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {packaged.map((p) => <ProductCard product={p} />)}
+      </div>
     </div>
   </section>
 
