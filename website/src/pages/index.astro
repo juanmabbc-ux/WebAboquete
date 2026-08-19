@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { Image } from 'astro:assets';
 import Icon from '../components/Icon.astro';
 import { site, whatsappUrl } from '../data/site';
+import granelImg from '../assets/products/tierra_granel.jpg';
 import empacadoImg from '../assets/products/saco_abono_100.jpg';
 import viveroImg from '../assets/vivero/clusia.jpg';
 
@@ -13,7 +14,8 @@ const description =
 const doors = [
   {
     href: '/productos#granel',
-    image: null,
+    image: granelImg,
+    cover: true,
     eyebrow: 'Mayoreo y proyectos',
     title: 'Tierra y abono a granel',
     text: 'Volquetes, sacos de 100 lbs y mezclas personalizadas — césped, siembra de árboles o tu fórmula.',
@@ -87,36 +89,17 @@ const doors = [
         {doors.map((d) => (
           <a href={d.href} class="card overflow-hidden flex flex-col group">
             <div class="aspect-[4/3] overflow-hidden bg-white flex items-center justify-center border-b border-[var(--color-border)]">
-              {d.image ? (
-                <Image
-                  src={d.image}
-                  alt={d.title}
-                  widths={[400, 600, 800]}
-                  sizes="(min-width: 768px) 33vw, 100vw"
-                  loading="lazy"
-                  class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-300"
-                />
-              ) : (
-                <svg viewBox="0 0 420 280" class="w-4/5 h-auto group-hover:scale-105 transition-transform duration-300" role="img" aria-label="Montículos de tierra a granel" fill="none">
-                  <circle cx="330" cy="64" r="30" fill="var(--color-sol-400)" />
-                  <g stroke="var(--color-sol-400)" stroke-width="7" stroke-linecap="round">
-                    <path d="M330 14v-8" transform="translate(0,10)" />
-                    <path d="M369 25l6-6" />
-                    <path d="M291 25l-6-6" />
-                    <path d="M377 64h9" />
-                  </g>
-                  <ellipse cx="205" cy="250" rx="180" ry="14" fill="var(--color-crema-2)" />
-                  <path d="M28 248 Q120 96 236 248 Z" fill="#8a613d" />
-                  <path d="M170 248 Q280 118 396 248 Z" fill="#6b4a2f" />
-                  <path d="M92 248 Q196 152 308 248 Z" fill="#a5794e" />
-                  <circle cx="120" cy="236" r="5" fill="#5f4026" />
-                  <circle cx="252" cy="240" r="6" fill="#5f4026" />
-                  <circle cx="318" cy="232" r="4" fill="#8a613d" />
-                  <path d="M200 202 q2 -26 0 -34" stroke="var(--color-lima-500)" stroke-width="4" stroke-linecap="round" />
-                  <path d="M200 172 q-20 -6 -22 -26 q22 4 22 26 Z" fill="var(--color-lima-400)" />
-                  <path d="M200 180 q20 -8 24 -28 q-24 2 -24 28 Z" fill="var(--color-bosque-500)" />
-                </svg>
-              )}
+              <Image
+                src={d.image}
+                alt={d.title}
+                widths={[400, 600, 800]}
+                sizes="(min-width: 768px) 33vw, 100vw"
+                loading="lazy"
+                class:list={[
+                  'w-full h-full group-hover:scale-105 transition-transform duration-300',
+                  d.cover ? 'object-cover' : 'object-contain p-4',
+                ]}
+              />
             </div>
             <div class="p-6 flex flex-col gap-2 flex-1">
               <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-naranja-400)]">{d.eyebrow}</span>
