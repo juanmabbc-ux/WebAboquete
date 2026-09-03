@@ -1,9 +1,9 @@
 # Aboquete S.A. — Website
 
-Sitio web institucional y catálogo de productos de **Aboquete S.A.** ("Siempre Verde"), construido con Astro + Tailwind CSS y desplegado en GitHub Pages bajo el dominio `aboquetepty.com`.
+Sitio web institucional y catálogo de productos de **Aboquete S.A.** ("Siempre Verde"), construido con Astro + Tailwind CSS y desplegado en GitHub Pages bajo el dominio `aboquete.com`.
 
 - **Idioma:** Español (es-PA)
-- **Páginas:** Inicio (`/`) y Productos (`/productos`)
+- **Páginas:** Inicio (`/`), Productos (`/productos`) y Vivero (`/vivero`)
 - **CTA principal:** WhatsApp +507 6645-7828
 - **Hosting:** GitHub Pages (estático) con dominio custom vía Squarespace
 - **Última actualización del diseño:** Mayo 2026
@@ -95,29 +95,45 @@ npm run dev        # http://localhost:4321
 
 ### Configuración inicial (una sola vez)
 
-1. **Crea el repositorio en GitHub** con el código de `aboquete-pty/` (este directorio padre).
-2. **Push a `main`** — el workflow `.github/workflows/deploy.yml` se ejecuta automáticamente.
-3. En GitHub: **Settings → Pages**
-   - Source: `GitHub Actions`
-4. Espera a que termine la primera ejecución del workflow (~2 min). El sitio quedará disponible en `https://<tu-usuario>.github.io/aboquete-pty/`.
+- **Repositorio:** <https://github.com/juanmabbc-ux/WebAboquete> (rama `main`)
+- **Workflow:** `.github/workflows/deploy.yml` corre en cada push a `main`.
+- En GitHub: **Settings → Pages → Build and deployment → Source: `GitHub Actions`**.
+- Sin dominio custom el sitio responde en `https://juanmabbc-ux.github.io/WebAboquete/`.
 
-### Dominio custom — `aboquetepty.com`
+> **El repositorio debe ser público.** GitHub Pages no publica repos privados en el plan gratuito; si se vuelve privado, Pages se desactiva y el sitio se cae. Alternativas si algún día debe ser privado: GitHub Pro (US$4/mes) o mudarse a Cloudflare Pages.
 
-El archivo `website/public/CNAME` ya contiene `aboquetepty.com`. Cuando el dominio esté comprado en Squarespace:
+### Dominio custom — `aboquete.com`
 
-1. En GitHub: **Settings → Pages → Custom domain** → ingresa `aboquetepty.com` → guarda.
-2. En Squarespace (panel del dominio), configura los registros DNS:
+El archivo `website/public/CNAME` contiene `aboquete.com` y el dominio está declarado en **Settings → Pages → Custom domain**.
 
-   | Tipo | Host/Nombre | Valor |
-   | --- | --- | --- |
-   | A | `@` | `185.199.108.153` |
-   | A | `@` | `185.199.109.153` |
-   | A | `@` | `185.199.110.153` |
-   | A | `@` | `185.199.111.153` |
-   | CNAME | `www` | `<tu-usuario>.github.io` |
+**El DNS vive en Level43 Networks** (nameservers `ns1`–`ns5.level43.net`), en un panel **Plesk**: `console.level43.net` → *Websites & Domains* → `aboquete.com` → *Hosting & DNS* → *DNS*.
 
-3. Espera la propagación DNS (10–60 min).
-4. Activa **"Enforce HTTPS"** en Settings → Pages cuando GitHub haya provisionado el certificado de Let's Encrypt (suele tardar otros 10–30 min).
+Registros que apuntan el dominio a GitHub Pages (aplicados el 3 de septiembre de 2026):
+
+| Tipo | Host | Valor |
+| --- | --- | --- |
+| A | `@` | `185.199.108.153` |
+| A | `@` | `185.199.109.153` |
+| A | `@` | `185.199.110.153` |
+| A | `@` | `185.199.111.153` |
+| CNAME | `www` | `juanmabbc-ux.github.io` |
+
+⚠️ **Nunca tocar en esa zona:**
+
+- El `MX` → `SMTP.GOOGLE.COM` y los `TXT` de SPF, DKIM (`google._domainkey`) y DMARC. **El correo de la empresa es Google Workspace** y depende de ellos.
+- El botón **"Reset to Default"** de Plesk: reescribe la zona completa con los valores del hosting y borra el MX de Google — tumba el correo.
+- Los registros `mail`, `webmail`, `ipv4`, `staging`, `mayoristas` y `ftp`, que siguen apuntando al servidor de Level43 (`35.237.67.85`).
+
+> **Herencia:** en ese servidor queda un WordPress + WooCommerce vacío (creado el 27 nov 2025) que fue lo que respondía en `aboquete.com` hasta el cambio. La suscripción de Level43 se mantiene porque ahí vive la zona DNS; si algún día se cancela, hay que mover el DNS antes (p. ej. a Cloudflare) copiando primero **todos** los registros de correo.
+
+Verificación rápida:
+
+```bash
+nslookup aboquete.com 8.8.8.8   # debe devolver los 185.199.10x.153
+curl -I https://aboquete.com    # debe responder "Server: GitHub.com"
+```
+
+Con el DNS resolviendo, **Settings → Pages** pasa el *DNS check* y habilita la casilla **Enforce HTTPS** (GitHub emite el certificado de Let's Encrypt 10–30 min después). Dejarla marcada.
 
 ### Despliegues posteriores
 
